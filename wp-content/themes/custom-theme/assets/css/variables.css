@@ -1,0 +1,297 @@
+:root{
+    /*--------------------------------------------------------------------------------------*\
+    | Content Width
+    \*--------------------------------------------------------------------------------------*/
+        --content-width-smallest: 95%;
+        --content-width-small: 900px;
+        --content-width-medium: 1350px;
+        --content-width-big: 1800px;
+        --content-width-full: 100%;
+    
+    
+    /*--------------------------------------------------------------------------------------*\
+    | Padding Content Width
+    \*--------------------------------------------------------------------------------------*/
+        --column-padding-big: 90px;
+        --column-padding-medium: 60px;
+        --column-padding-small: 45px;
+    
+        --content-padding-big: 40px;
+        --content-padding-medium: 30px;
+        --content-padding-small: 15px;
+    
+    
+    /*--------------------------------------------------------------------------------------*\
+    | Custom Colors
+    \*--------------------------------------------------------------------------------------*/
+        --color-black:#1D1D1D;
+        --color-accent-black: #260818;
+        --color-lighter-black: #333333;
+        --color-gray: #343A40;
+        --color-dark-yellow: #FFBA00;
+        --color-yellow: #E5B217;
+        --color-salmon: #FF8366; 
+        --color-dark-salmon: #D34727;
+        --color-lighter-salmon: #EF8A6E;   
+        --color-brown: #4D300B;
+        --color-deep-brown: #522E00;
+        --color-lighter-gray: #f0f0f0;
+        --color-white:#ffffff;
+}
+    
+
+/*--------------------------------------------------------------------------------------*\
+| Character Styles
+\*--------------------------------------------------------------------------------------*/
+body{
+    font-family: 'Cabin', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--color-black);
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: 'Baskerville URW', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: var(--color-lighter-black);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-big);
+}
+
+h2 {
+    font-family: 'Baskerville URW';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-medium);   
+}
+h3, figcaption {
+    font-family: 'Baskerville URW';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-medium);
+}
+h4 {
+    font-family: 'Baskerville URW';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-medium);
+}
+h5 {
+    font-family: 'Gopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-small);
+}
+h6 {
+    font-family: 'Gopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    color: var(--color-gray);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-small);
+}
+p {
+    font-family: 'Work Sans, Light', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: var(--color-black);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-medium);
+}
+a {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: var(--color-black);
+    margin-top: 0;
+    line-height: 1.2;
+    font-size: 16px;
+}
+li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: var(--color-black);
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| Block Color
+\*--------------------------------------------------------------------------------------*/
+.has-accent-black-background-color {
+    background-color: var(--color-accent-black);
+}
+.has-lighter-black-background-color {
+    background-color: var(--color-lighter-black);
+}
+.has-black-background-color {
+    background-color: var(--color-black);
+}
+.has-lighter-gray-background-color {
+    background-color: var(--color-lighter-gray);
+}
+.has-gray-background-color {
+    background-color: var(--color-gray);
+}
+.has-white-background-color {
+    background-color: var(--color-white);
+}
+.has-dark-yellow-background-color {
+    background-color: var(--color-dark-yellow);
+}
+.has-yellow-background-color {
+    background-color: var(--color-yellow);
+}
+.has-salmon-background-color {
+    background-color: var(--color-salmon);
+}
+.has-dark-salmon-background-color {
+    background-color: var(--color-dark-salmon);
+}
+.has-lighter-salmon-background-color {
+    background-color: var(--color-lighter-salmon);
+}
+.has-brown-background-color {
+    background-color: var(--color-brown);
+}
+.has-deep-brown-background-color {
+    background-color: var(--color-deep-brown);
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| Text Color
+\*--------------------------------------------------------------------------------------*/
+.has-accent-black-color {
+    color: var(--color-accent-black);
+}
+.has-lighter-black-color {
+    color: var(--color-lighter-black);
+}
+.has-black-color {
+    color: var(--color-black);
+}
+.has-lighter-gray-color {
+    color: var(--color-lighter-gray);
+}
+.has-gray-color {
+    color: var(--color-gray);
+}
+.has-white-color {
+    color: var(--color-white);
+}
+.has-dark-yellow-color {
+    color: var(--color-dark-yellow);
+}
+.has-yellow-color {
+    color: var(--color-yellow);
+}
+.has-salmon-color {
+    color: var(--color-salmon);
+}
+.has-dark-salmon-color {
+    color: var(--color-dark-salmon);
+}
+.has-lighter-salmon-color {
+    color: var(--color-lighter-salmon);
+}
+.has-brown-color {
+    color: var(--color-brown);
+}
+.has-deep-brown-color {
+    color: var(--color-deep-brown);
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| Variables Media Queries
+\*--------------------------------------------------------------------------------------*/
+@media screen and (max-width: 1200px){
+    h1{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 32px;
+        font-weight: bold;
+    }
+    h3,figcaption{
+        size: 24px;
+        font-weight: bold;
+    }
+    h4, h5{
+        font-size: 24px;
+    }
+    p{
+        font-size: 13px;
+    }
+    a{
+        font-size: 16px;
+    }
+    li{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3,figcaption{
+        font-size: 18px;
+    }
+    h4, h5{
+        font-size: 18px;
+    }
+    p{
+        font-size: 12px;
+    }
+    a{
+        font-size: 12px;
+    }
+    li{
+        font-size: 12px;
+    }
+}

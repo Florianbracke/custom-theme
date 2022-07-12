@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------------------------------*\
+| HEADER
+\*--------------------------------------------------------------------------------------*/
+header .mobile-header-block{
+    display: none;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| MEDIA QUERIES
+\*--------------------------------------------------------------------------------------*/
+@media screen and (max-width: 1800px){
+
+}
+@media screen and (max-width: 1350px){
+
+}
+@media screen and (max-width: 900px){
+
+}
+@media screen and (max-width: 768px){
+
+}
+@media screen and (max-width: 550px){
+    header .mobile-header-block{
+        display: flex;
+        flex-direction: column;
+    }
+}
