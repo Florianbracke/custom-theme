@@ -8,15 +8,13 @@
         --content-width-big: 1800px;
         --content-width-full: 100%;
     
-    
+        --border-radius: 11px;
+
     /*--------------------------------------------------------------------------------------*\
     | Padding Content Width
     \*--------------------------------------------------------------------------------------*/
-        --column-padding-big: 90px;
-        --column-padding-medium: 60px;
-        --column-padding-small: 45px;
-    
-        --content-padding-big: 40px;
+        --content-padding-huge: 120px;
+        --content-padding-big: 60px;
         --content-padding-medium: 30px;
         --content-padding-small: 15px;
     
@@ -24,19 +22,17 @@
     /*--------------------------------------------------------------------------------------*\
     | Custom Colors
     \*--------------------------------------------------------------------------------------*/
-        --color-black:#1D1D1D;
-        --color-accent-black: #260818;
-        --color-lighter-black: #333333;
-        --color-gray: #343A40;
-        --color-dark-yellow: #FFBA00;
-        --color-yellow: #E5B217;
-        --color-salmon: #FF8366; 
-        --color-dark-salmon: #D34727;
-        --color-lighter-salmon: #EF8A6E;   
-        --color-brown: #4D300B;
-        --color-deep-brown: #522E00;
-        --color-lighter-gray: #f0f0f0;
-        --color-white:#ffffff;
+        --color-black: #000000;
+        --color-orange: #E3B79A;
+        --color-brown: #505050;;
+        --color-lighter-brown: #D1B1A7;
+        --color-gray: #575549;
+        --color-yellow: #FDE2D4;
+        --color-lighter-yellow: #F1EBE1;
+        --color-green: #A3ADA8;
+        --color-darker-green: #94A9A0;
+        --color-lighter-green: #DFEBE7;
+        --color-white: #FAFAFA;
 }
     
 
@@ -60,9 +56,9 @@ h1 {
     font-size: 60px;
     line-height: 1;
     letter-spacing: 2px;
-    color: var(--color-lighter-black);
+    color: var(--color-brown);
     margin-top: 0;
-    margin-bottom: var(--content-padding-big);
+    margin-bottom: var(--content-padding-medium);
 }
 
 h2 {
@@ -72,40 +68,40 @@ h2 {
     font-size: 40px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    color: var(--color-brown);
     margin-top: 0;
-    margin-bottom: var(--content-padding-medium);   
+    margin-bottom: var(--content-padding-small);   
 }
 h3, figcaption {
     font-family: 'Baskerville URW';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    line-height: 1.33;
+    line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    color: var(--color-brown);
     margin-top: 0;
-    margin-bottom: var(--content-padding-medium);
+    margin-bottom: var(--content-padding-small);
 }
 h4 {
     font-family: 'Baskerville URW';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 1.33;
+    line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    color: var(--color-brown);
     margin-top: 0;
-    margin-bottom: var(--content-padding-medium);
+    margin-bottom: var(--content-padding-small);
 }
 h5 {
     font-family: 'Gopher';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 1.33;
+    line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    color: var(--color-brown);
     margin-top: 0;
     margin-bottom: var(--content-padding-small);
 }
@@ -114,9 +110,9 @@ h6 {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 1.33;
+    line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    color: var(--color-brown);
     margin-top: 0;
     margin-bottom: var(--content-padding-small);
 }
@@ -124,7 +120,7 @@ p {
     font-family: 'Work Sans, Light', sans-serif;
     font-weight: 300;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: 0px;
     color: var(--color-black);
     margin-top: 0;
@@ -135,14 +131,14 @@ a {
     text-decoration: none;
     color: var(--color-black);
     margin-top: 0;
-    line-height: 1.2;
+    line-height: 1.1;
     font-size: 16px;
 }
 li {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: 0px;
     color: var(--color-black);
 }
@@ -153,93 +149,80 @@ li {
 /*--------------------------------------------------------------------------------------*\
 | Block Color
 \*--------------------------------------------------------------------------------------*/
-.has-accent-black-background-color {
-    background-color: var(--color-accent-black);
-}
-.has-lighter-black-background-color {
-    background-color: var(--color-lighter-black);
-}
 .has-black-background-color {
     background-color: var(--color-black);
-}
-.has-lighter-gray-background-color {
-    background-color: var(--color-lighter-gray);
-}
-.has-gray-background-color {
-    background-color: var(--color-gray);
 }
 .has-white-background-color {
     background-color: var(--color-white);
 }
-.has-dark-yellow-background-color {
-    background-color: var(--color-dark-yellow);
-}
 .has-yellow-background-color {
     background-color: var(--color-yellow);
 }
-.has-salmon-background-color {
-    background-color: var(--color-salmon);
-}
-.has-dark-salmon-background-color {
-    background-color: var(--color-dark-salmon);
-}
-.has-lighter-salmon-background-color {
-    background-color: var(--color-lighter-salmon);
+.has-lighter-yellow-background-color {
+    background-color: var(--color-lighter-yellow);
 }
 .has-brown-background-color {
     background-color: var(--color-brown);
 }
-.has-deep-brown-background-color {
-    background-color: var(--color-deep-brown);
+.has-lighter-brown-background-color {
+    background-color: var(--color-lighter-brown);
 }
-
-
+.has-orange-background-color {
+    background-color: var(--color-orange);
+}
+.has-lighter-green-background-color {
+    background-color: var(--color-lighter-green);
+}
+.has-green-background-color {
+    background-color: var(--color-green);
+}
+.has-darker-green-background-color {
+    background-color: var(--color-darker-green);
+}
+.has-lighter-green-background-color {
+    background-color: var(--color-lighter-green);
+}
+.has-gray-background-color{
+    background-color: var(--color-gray);
+}
 
 
 /*--------------------------------------------------------------------------------------*\
 | Text Color
 \*--------------------------------------------------------------------------------------*/
-.has-accent-black-color {
-    color: var(--color-accent-black);
-}
-.has-lighter-black-color {
-    color: var(--color-lighter-black);
-}
 .has-black-color {
     color: var(--color-black);
-}
-.has-lighter-gray-color {
-    color: var(--color-lighter-gray);
-}
-.has-gray-color {
-    color: var(--color-gray);
 }
 .has-white-color {
     color: var(--color-white);
 }
-.has-dark-yellow-color {
-    color: var(--color-dark-yellow);
-}
 .has-yellow-color {
     color: var(--color-yellow);
 }
-.has-salmon-color {
-    color: var(--color-salmon);
-}
-.has-dark-salmon-color {
-    color: var(--color-dark-salmon);
-}
-.has-lighter-salmon-color {
-    color: var(--color-lighter-salmon);
+.has-lighter-yellow-color {
+    color: var(--color-lighter-yellow);
 }
 .has-brown-color {
     color: var(--color-brown);
 }
-.has-deep-brown-color {
-    color: var(--color-deep-brown);
+.has-lighter-brown-color {
+    color: var(--color-lighter-brown);
 }
-
-
+.has-orange-color {
+    color: var(--color-orange);
+}
+.has-green-color {
+    color: var(--color-green);
+}
+.has-lighter-green-color {
+    color: var(--color-lighter-green);
+}
+.has-darker-green-color {
+    color: var(--color-darker-green);
+}
+.has-gray-color{
+    color: var(--color-gray);
+}
 
 
 /*--------------------------------------------------------------------------------------*\
