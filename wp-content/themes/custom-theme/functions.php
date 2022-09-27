@@ -99,7 +99,12 @@ function editor_styles_scripts() {
 
 
 
-
-
+/*--------------------------------------------------------------------------------------*\
+| ADD REUSABLE BLOCKS TO ADMIN BAR
+\*--------------------------------------------------------------------------------------*/
+add_action( 'admin_menu', 'reusable_blocks_link_wp_admin' );
+function reusable_blocks_link_wp_admin() {
+    add_menu_page( 'linked_url', 'Reusable Blocks', 'read', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
+}
 
 	
