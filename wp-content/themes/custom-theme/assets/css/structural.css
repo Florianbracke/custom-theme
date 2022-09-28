@@ -78,7 +78,24 @@ p em{
 .entry-content > *:last-child{
     margin-bottom: 0;
 }
-
+.are-vertically-aligned-center{
+   align-items: center;
+}
+.are-vertically-aligned-bottom{
+   align-items: flex-end;
+}
+.are-vertically-aligned-top{
+   align-items: flex-start;
+}
+.is-vertically-aligned-center{
+    align-self: center;
+}
+.is-vertically-aligned-top{
+    align-self: flex-start;
+}
+.is-vertically-aligned-bottom{
+    align-self: flex-end;
+}
 
 /*--------------------------------------------------------------------------------------*\
 | FORMS
