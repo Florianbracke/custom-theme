@@ -134,7 +134,10 @@ p em{
         padding-left: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
 		padding-right: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
     }
-
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+		margin-right: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+	}
  
 }
 @media screen and (max-width: 1350px){
@@ -142,14 +145,20 @@ p em{
         padding-left: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
 		padding-right: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
     }
-
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+		margin-right: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+	}
 }
 @media screen and (max-width: 900px){
     .alignwide, .entry-content > .wp-block-columns:not(.alignfull), body > div > header, footer, .woocommerce .site-main, .woocommerce-page .site-main, body .entry-header, div.entry-content > *:not(.wp-block-columns, .wp-block-group) {
         padding-left: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
 		padding-right: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
     }
-
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+		margin-right: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+	}
     .entry-content > .alignwide{
         flex-direction: column;
     }
