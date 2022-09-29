@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------------------------------*\
+| HEADER
+\*--------------------------------------------------------------------------------------*/
+header .mobile-header-block{
+    display: none;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| MEDIA QUERIES
+\*--------------------------------------------------------------------------------------*/
+@media screen and (max-width: 1800px){
+
+}
+@media screen and (max-width: 1350px){
+
+}
+@media screen and (max-width: 900px){
+
+}
+@media screen and (max-width: 768px){
+	header .mobile-header-block{
+    	display: flex;
+	}
+	header .menu-container-mobile{
+		display: none;
+	}
+	header .mobile-buttons{
+		display: flex;
+		justify-content: space-between;
+		width: 100vw;
+		background: var(--color-light-green);
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		height: 40px;
+		align-items: center;
+	}
+	header .mobile-buttons > *{
+		border: 1px solid white;
+		background-color: var(--color-light-blue);
+		width: 50%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+	header .mobile-buttons img{
+		width: 30px;
+		height: 30px;
+	}
+	header .mobile-buttons .mobile-reservatie{
+		color: var(--color-white);
+	}
+	header .menu-container-mobile.active-mobile-header{
+		display: flex;
+		position: fixed;
+		height: calc(100vh - 40px);
+		width: 100vw;
+		background: var(--color-light-green);
+		left: 0;
+		top: 0;
+		z-index: 10000000;
+		transition: 0.5s;
+		background: var(--color-accent-black);
+	}
+	header ul.menu{
+		flex-direction: column;
+		height: calc(100vh - 160px);
+		border-radius: 50px;
+		width: calc(100vw - 100px);
+		margin: 0;
+		justify-content: space-around;
+	}
+	header ul.menu li a{
+		font-size: 28px;
+	}
+	header .site-branding{
+		padding-left: 0;
+	}
+	header.site-header{
+		clip-path: unset;
+		height: 75px;
+		flex-direction: column;
+	}
+	header .main-navigation > .menu-container {
+		display: none;
+	}
+}
+@media screen and (max-width: 550px){
+
+}

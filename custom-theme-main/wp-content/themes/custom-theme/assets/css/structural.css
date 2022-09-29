@@ -1,0 +1,192 @@
+body{
+    margin: 0;
+}
+.alignwide, .entry-content > .wp-block-columns:not(.alignfull), body > div > header, footer, .woocommerce .site-main, .woocommerce-page .site-main, body .entry-header, div.entry-content > *:not(.wp-block-columns, .wp-block-group) {
+    padding-left: max( 200px , calc(calc(100vw - var(--content-width-big)) /2) );
+    padding-right: max( 200px , calc(calc(100vw - var(--content-width-big)) /2) );
+}
+div.wp-block-columns{
+    align-items: flex-start;
+    gap: var(--content-padding-huge );
+}
+div.wp-block-group{
+	padding-bottom: var(--content-padding-big );
+}
+div.entry-content > div.wp-block-columns{
+    padding-bottom: var(--content-padding-huge );
+    padding-top: var(--content-padding-huge);
+    align-items: flex-start;
+    gap: var(--content-padding-huge );
+}
+div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+	margin-left: max( 200px , calc(calc(100vw - var(--content-width-big)) /2) );
+    margin-right: max( 200px , calc(calc(100vw - var(--content-width-big)) /2) );
+}
+
+.wp-block-columns.has-background > .wp-block-column:first-child{
+    padding-right: 0px;
+}
+.wp-block-columns.has-background > .wp-block-column:last-child{
+    padding-left: 0px;
+}
+.entry-content > .wp-block-columns:not(.alignfull, .alignwide){
+    max-width: 768px;
+    margin: auto;
+}
+.entry-content > .alignwide{
+    display: flex;
+    max-width: 100%;
+}
+.entry-content > .alignfull{
+    display: flex;
+    max-width: var(--content-width-full);
+}
+.wp-block-columns >.wp-block-column:not(:only-child){
+    flex-basis: 50%;
+    margin-bottom: var(--column-padding-small);
+}
+figure{
+    margin: 0;
+}
+.entry-content img{
+    width: 100%;
+    max-height: 750px;
+    object-fit: cover;
+}
+.entry-content img.small{
+    max-height: 300px;
+}
+.has-text-align-center{
+    text-align: center;
+}
+.has-text-align-left{
+    text-align: left;
+}
+.has-text-align-right{
+    text-align: right;
+}
+.entry-header{
+    display: none;
+}
+p em{
+    font-size: 10px;
+    color: var(--color-lighter-brown);
+    font-style: italic;
+    position: relative;
+    top: -15px;
+}
+.entry-content > *:last-child{
+    margin-bottom: 0;
+}
+.are-vertically-aligned-center{
+   align-items: center;
+}
+.are-vertically-aligned-bottom{
+   align-items: flex-end;
+}
+.are-vertically-aligned-top{
+   align-items: flex-start;
+}
+.is-vertically-aligned-center{
+    align-self: center;
+}
+.is-vertically-aligned-top{
+    align-self: flex-start;
+}
+.is-vertically-aligned-bottom{
+    align-self: flex-end;
+}
+
+/*--------------------------------------------------------------------------------------*\
+| FORMS
+\*--------------------------------------------------------------------------------------*/
+.gform_wrapper.gravity-theme .gform_heading{
+	display: none;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| BUTTONS
+\*--------------------------------------------------------------------------------------*/   
+.entry-content .wp-block-button{
+    margin-bottom: var(--content-padding-medium);
+}
+.entry-content .wp-block-button a {
+    border: 1px solid var(--color-kastanjekastanje);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    color: var(--color-white);
+    background-color: var(--color-kastanje);
+}
+.entry-content .wp-block-button.is-style-outline a{
+    border: 1px solid var(--color-brown);
+    background-color: unset;
+    border-radius: var(--border-radius);
+    padding: 8px;
+    color: var(--color-brown);
+}
+/* HOVER */
+.entry-content .wp-block-button a:hover{
+	cursor: pointer;
+    color: var(--color-white);
+    background-color: var(--color-brown);
+    transition: 0.2s;
+}
+.entry-content .wp-block-button.is-style-outline a:hover{
+    color: var(--color-white);
+    background-color: var(--color-brown);
+    transition: 0.2s;
+}
+
+
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| MEDIA QUERIES
+\*--------------------------------------------------------------------------------------*/
+@media screen and (max-width: 1800px){
+    .alignwide, .entry-content > .wp-block-columns:not(.alignfull), body > div > header, footer, .woocommerce .site-main, .woocommerce-page .site-main, body .entry-header, div.entry-content > *:not(.wp-block-columns, .wp-block-group) {
+        padding-left: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+		padding-right: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+    }
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+		margin-right: max( 150px , calc(calc(100vw - var(--content-width-medium)) /2) );
+	}
+ 
+}
+@media screen and (max-width: 1350px){
+    .alignwide, .entry-content > .wp-block-columns:not(.alignfull), body > div > header, footer, .woocommerce .site-main, .woocommerce-page .site-main, body .entry-header, div.entry-content > *:not(.wp-block-columns, .wp-block-group) {
+        padding-left: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+		padding-right: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+    }
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+		margin-right: max( 150px , calc(calc(100vw - var(--content-width-small)) /2) );
+	}
+}
+@media screen and (max-width: 900px){
+    .alignwide, .entry-content > .wp-block-columns:not(.alignfull), body > div > header, footer, .woocommerce .site-main, .woocommerce-page .site-main, body .entry-header, div.entry-content > *:not(.wp-block-columns, .wp-block-group) {
+        padding-left: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+		padding-right: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+    }
+	div.wp-block-columns.has-background:has(.wp-block-column:only-child){
+		margin-left: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+		margin-right: max( 50px , calc(calc(100vw - var(--content-width-smallest)) /2) );
+	}
+    .entry-content > .alignwide{
+        flex-direction: column;
+    }
+    .wp-block-columns >.wp-block-column:not(:first-child){
+        margin-left: 0 ;
+    }
+
+}
+@media screen and (max-width: 768px){
+
+}
+@media screen and (max-width: 550px){
+
+}
