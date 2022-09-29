@@ -1,27 +1,31 @@
 <?php 
 
-add_action('init', function() {
-	remove_theme_support('core-block-patterns');
-});
 
 /*--------------------------------------------------------------------------------------*\
 | Register BLOG BLOCK PATTERN
 \*--------------------------------------------------------------------------------------*/
 function wpdocs_register_block_patterns() {
 
-	register_block_pattern(
-		'Wizarts/blog-block',
+ 	$directory = get_stylesheet_directory() . "/template-parts/blockPatterns/";
+	$filecount = count(glob($directory . "*"));
 
-		[
-			'categories' 	=> array( 'featured' ),
-			'content'       => '(  .  Y  .  )',
-			'description'   => 'Two blocks with images and decorations.',
-			'keywords'      => array( 'blog', 'blog', 'block'),
-			'title'         => 'Two blocks with images',
-		],
+	for ($x = 1; $x <= $filecount; $x++) {
 
-	);
+	  	require get_stylesheet_directory() . "/template-parts/blockPatterns/blok-{$x}.php";
+
+		register_block_pattern(
+			"Wizarts/{$naam}",
+
+			[
+				'content'       => "$block",
+				'description'   => "$beschrijving",
+				'title'         => "$beschrijving",
+			],
+
+		);
+	}
+	
 }
-add_action( 'init', 'wpdocs_register_block_patterns' );
+add_action( 'after_setup_theme', 'wpdocs_register_block_patterns' );
 
 
