@@ -38,33 +38,57 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
-
 /*--------------------------------------------------------------------------------------*\
-| ADD OPTION PAGE -> NEED ACF (PRO?)
+| ADD OPTION PAGE -> NEED ACF 
 \*--------------------------------------------------------------------------------------*/
 if( function_exists('acf_add_options_page') ) {
-	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Openingsuren',
-		'menu_title'	=> 'Openingsuren',
-		'menu_slug' 	=> 'openingsuren',
+		'page_title' 	=> 'Consero settings',
+		'menu_title'	=> 'Consero settings',
+		'menu_slug' 	=> 'Consero settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false,
 		'position'		=> '2',
 		'icon_url'		=> 'dashicons-clock'
-));
+	));
 }
 
-// function wpb_custom_toolbar_link($wp_admin_bar) {
-//     $args = array(
-//         'title' => 'Openingsuren', 
-//         'href' => '/wp-admin/admin.php?page=openingsuren', 
-//     );
+function wpb_custom_toolbar_link($wp_admin_bar) {
+	if( function_exists('acf_add_options_page') ) {
+	     	$args = array(
+			'title' => 'Consero settings', 
+		 	'href' => '/wp-admin/admin.php?page=Consero+settings', 
+	     	);
 
-//     $wp_admin_bar->add_node($args);
-// }
-// add_action('admin_bar_menu', 'wpb_custom_toolbar_link', 999);
+	     	$wp_admin_bar->add_node($args);
+ 		}
+}
+add_action('admin_bar_menu', 'wpb_custom_toolbar_link', 999);
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| STYLE ACF OPTIONS PAGE
+\*--------------------------------------------------------------------------------------*/
+function my_acf_admin_head() {
+    ?>
+    <style type="text/css">
+		.postbox > div.acf-fields > div.acf-field > .acf-label{
+			padding: 8px;
+			background: #d6d5bf;
+		}
+		.acf-field{
+			background: #f8f8f4;
+		}
+        .acf-postbox > .-top > .acf-field, .acf-postbox > .-top > .acf-field-group{
+			background: #e9e9df;
+		}
+    </style>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head');
 	
+
 
 
 /*--------------------------------------------------------------------------------------*\
