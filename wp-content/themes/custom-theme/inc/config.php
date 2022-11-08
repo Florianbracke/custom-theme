@@ -1,6 +1,4 @@
 <?php
-
-
 /*--------------------------------------------------------------------------------------*\
 | Enqueue ALL js and css files
 | https://wordpress.stackexchange.com/questions/276890/how-to-enqueue-every-script-in-a-folder-automatically/276897
@@ -130,3 +128,191 @@ function my_acf_init_block_types() {
     }
 }
 add_action('acf/init', 'my_acf_init_block_types');
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| Add ACF-OPTIONSPAGE
+\*--------------------------------------------------------------------------------------*/
+function ACF_optionspage() {
+
+	if( function_exists('acf_add_local_field_group') ):
+
+		acf_add_local_field_group(array(
+			'key' => 'group_636a22febcae7',
+			'title' => 'Options page',
+			'fields' => array(
+				array(
+					'key' => 'field_636a243b64401',
+					'label' => 'Gegevens',
+					'name' => 'gegevens',
+					'type' => 'group',
+					'instructions' => 'Vul hier de gegevens van je bedrijf in. Dit wordt aan de klanten getoont.',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'layout' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_636a244d64402',
+							'label' => 'Email',
+							'name' => 'email',
+							'type' => 'email',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+						),
+						array(
+							'key' => 'field_636a245464403',
+							'label' => 'Telefoon nummer',
+							'name' => 'telefoon_nummer',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_636a246c64404',
+							'label' => 'Straat + nummer',
+							'name' => 'straat_nummer',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_636a248164405',
+							'label' => 'Gemeente + postcode',
+							'name' => 'gemeente_postcode',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_636a258c8634f',
+							'label' => 'Naam bedrijf',
+							'name' => 'naam_bedrijf',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_636a23b4a16cf',
+							'label' => 'Maatschappelijke zetel',
+							'name' => 'maatschappelijke_zetel',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_636a23afa16ce',
+							'label' => 'Ondernemingsnummer',
+							'name' => 'ondernemingsnummer',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+					),
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'settings',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+			'show_in_rest' => 0,
+		));
+	endif;		
+}
+add_action('acf/init', 'ACF_optionspage');
+
+
