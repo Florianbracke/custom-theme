@@ -1,4 +1,4 @@
 <?php 
-	$post_title = '';
-	$post_content = '';
+	$post_title = 'Cookie policy';
+	$post_content = '<p> automatically write a cookie policy here </p>';
 ?>
