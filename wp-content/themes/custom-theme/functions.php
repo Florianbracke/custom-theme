@@ -1,7 +1,4 @@
 <?php
-
-
-
 /*--------------------------------------------------------------------------------------*\
 | INCLUDES
 \*--------------------------------------------------------------------------------------*/
@@ -107,13 +104,8 @@ add_action('admin_bar_menu', 'custom_toolbar_link', 999);
 | CUSTOM EDITOR STYLES
 \*--------------------------------------------------------------------------------------*/
 function editor_styles_scripts() {
-	wp_enqueue_script( 
-        'be-editor',
-        get_stylesheet_directory_uri() . '/assets/editor.js',
-        array( 'wp-blocks', 'wp-dom' ), 
-	    filemtime( get_stylesheet_directory() . '/assets/editor.js' ),
-        true
-	);  
+	wp_enqueue_script( 'be-editor', get_stylesheet_directory_uri() . '/assets/editor.js', array( 'wp-blocks', 'wp-dom' ),
+	filemtime( get_stylesheet_directory() . '/assets/editor.js' ), true );  
 
 	add_theme_support( 'editor-styles' );
 	add_editor_style( '/assets/css/style-editor.css' ); 
@@ -147,3 +139,36 @@ function removeCorePatterns() {
 	unregister_block_pattern_category('text');
 	unregister_block_pattern_category('uncategorized');
 }
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| CREATE POST OBJECT, AUTOMATIC COOKIE/PRIVACY/...
+\*--------------------------------------------------------------------------------------*/
+// automatically create options page + data for privacy policy, cookie policy, ...
+function add_pages() {
+
+ 	$directory = get_stylesheet_directory() . "/template-parts/pages/";
+	$filecount = count(glob($directory . "*"));
+
+	if ( !get_option('run_only_once_1') ){
+
+		for ($x = 1; $x <= $filecount; $x++) {
+
+			require get_stylesheet_directory() . "/template-parts/pages/page-{$x}.php";
+
+			$page = array(
+				'$post_title'    => $post_title,
+				'$post_content'  => $post_content,
+				'post_status'   => 'publish',
+				'post_type'		=> 'page',
+			);
+
+			wp_insert_post( $page );
+			add_option('run_only_once_1', 1); 
+
+		}
+	} 
+}
+add_action( 'after_setup_theme', 'add_pages' );
+	
