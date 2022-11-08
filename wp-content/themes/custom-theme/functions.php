@@ -147,28 +147,31 @@ function removeCorePatterns() {
 \*--------------------------------------------------------------------------------------*/
 // automatically create options page + data for privacy policy, cookie policy, ...
 function add_pages() {
+	if( get_field('gegevens','option')){
 
- 	$directory = get_stylesheet_directory() . "/template-parts/pages/";
-	$filecount = count(glob($directory . "*"));
+		$directory = get_stylesheet_directory() . "/template-parts/pages/";
+		$filecount = count(glob($directory . "*"));
 
-	if ( !get_option('run_only_once_1') ){
+		if ( !get_option('run_only_once_111111011111011') ){
 
-		for ($x = 1; $x <= $filecount; $x++) {
+			for ($x = 1; $x <= $filecount; $x++) {
 
-			require get_stylesheet_directory() . "/template-parts/pages/page-{$x}.php";
+				require get_stylesheet_directory() . "/template-parts/pages/page-{$x}.php";
 
-			$page = array(
-				'$post_title'    => $post_title,
-				'$post_content'  => $post_content,
-				'post_status'   => 'publish',
-				'post_type'		=> 'page',
-			);
+				$page = array(
+					'post_title'    => "$post_title",
+					'post_content'  => "$post_content",
+					'post_status'   => 'publish',
+					'post_type'		=> 'page',
+				);
 
-			wp_insert_post( $page );
-			add_option('run_only_once_1', 1); 
+				wp_insert_post( $page );
+				add_option('run_only_once_111111011111011', 1); 
 
-		}
-	} 
+			}
+		} 
+	}
 }
+
 add_action( 'after_setup_theme', 'add_pages' );
 	
