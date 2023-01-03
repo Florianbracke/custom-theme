@@ -139,36 +139,36 @@ let lightboxStyles = `
 		transition: 0.4s;
 	}
 	.arrow::before{
-	    content: '\003C';
-	    width: 30px;
-	    height: 30px;
-	    color: white;
-	    position: absolute;
-	    top: calc( 50% - 15px);
-	    left: calc( 50% - 15px);
-	    font-size: 20px;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
+		content: '<';
+		width: 30px;
+		height: 30px;
+		color: white;
+		position: absolute;
+		top: calc( 50% - 15px);
+		left: calc( 50% - 15px);
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.arrow.right{
 		right: 5%;
 		left: unset;
 	}
 	.arrow.right::before{
-		content: '\003E';
+		content: '>';
 	}
 	.lightbox{
 		position: fixed;
-	    top: 0;
+		top: 0;
 		z-index: 1000;
-	    left: 0;
-	    width: 100vw;
-	    height: 100vh;
-	    background: #000000eb;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: #000000eb;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.lightbox img{
 		max-width: 60%;
