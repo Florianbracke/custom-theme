@@ -313,6 +313,6 @@ function ACF_optionspage() {
 		));
 	endif;		
 }
-add_action('acf/init', 'ACF_optionspage');
+//add_action('acf/init', 'ACF_optionspage');
 
 
