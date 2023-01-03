@@ -67,23 +67,25 @@ add_action('admin_bar_menu', 'wpb_custom_toolbar_link', 999);
 /*--------------------------------------------------------------------------------------*\
 | STYLE ACF OPTIONS PAGE
 \*--------------------------------------------------------------------------------------*/
-function my_acf_admin_head() {
-    ?>
-    <style type="text/css">
-		.postbox > div.acf-fields > div.acf-field > .acf-label{
-			padding: 8px;
-			background: #d6d5bf;
-		}
-		.acf-field{
-			background: #f8f8f4;
-		}
-        .acf-postbox > .-top > .acf-field, .acf-postbox > .-top > .acf-field-group{
-			background: #e9e9df;
-		}
-    </style>
-    <?php
+if( function_exists('acf_add_options_page') ) {
+	function my_acf_admin_head() {
+	    ?>
+	    <style type="text/css">
+			.postbox > div.acf-fields > div.acf-field > .acf-label{
+				padding: 8px;
+				background: #d6d5bf;
+			}
+			.acf-field{
+				background: #f8f8f4;
+			}
+		.acf-postbox > .-top > .acf-field, .acf-postbox > .-top > .acf-field-group{
+				background: #e9e9df;
+			}
+	    </style>
+	    <?php
+	}
+	add_action('acf/input/admin_head', 'my_acf_admin_head');
 }
-add_action('acf/input/admin_head', 'my_acf_admin_head');
 	
 
 
@@ -141,10 +143,8 @@ function get_reusable_block( $block_id ){
 /*--------------------------------------------------------------------------------------*\
 | ADD AND REMOVE BLOCK PATTERN CATEGORIES
 \*--------------------------------------------------------------------------------------*/
-add_action('after_setup_theme', 'removeCorePatterns');
-
 function removeCorePatterns() {
-    remove_theme_support('core-block-patterns');
+    	remove_theme_support('core-block-patterns');
 	unregister_block_pattern_category('buttons');
 	unregister_block_pattern_category('columns');
 	unregister_block_pattern_category('gallery');
@@ -152,6 +152,7 @@ function removeCorePatterns() {
 	unregister_block_pattern_category('text');
 	unregister_block_pattern_category('uncategorized');
 }
+add_action('after_setup_theme', 'removeCorePatterns');
 
 
 
@@ -165,7 +166,7 @@ function add_pages() {
 		$directory = get_stylesheet_directory() . "/template-parts/pages/";
 		$filecount = count(glob($directory . "*"));
 
-		if ( !get_option('run_only_once_111111011111011') ){
+		if ( !get_option('run_only_once_1') ){
 
 			for ($x = 1; $x <= $filecount; $x++) {
 
@@ -186,5 +187,5 @@ function add_pages() {
 	}
 }
 
-add_action( 'after_setup_theme', 'add_pages' );
+//add_action( 'after_setup_theme', 'add_pages' );
 	
