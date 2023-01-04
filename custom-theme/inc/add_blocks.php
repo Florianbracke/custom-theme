@@ -40,18 +40,20 @@ function my_acf_init_block_types() {
         $filecount = count(glob($directory . "*"));
     
        for ($x = 1; $x <= $filecount; $x++) {
-    
-        require get_stylesheet_directory() . "/template-parts/blocks/blok-$x.php";
+        
+            require get_stylesheet_directory() . "/template-parts/blocks/blok-$x.php";
 
-        acf_register_block_type(array(
-            'name'              => "$naam",
-            'title'             => "$naam",
-            'description'       => "$beschrijving",
-            'render_template'   => "template-parts/blocks/blok-$x.php",
-            'category'          => '...',
-            'icon'              => 'admin-comments',
-            'keywords'          => array( "$naam" ),
-        ));
+            acf_register_block_type(array(
+                'name'              => "$naam",
+                'title'             => "$naam",
+                'description'       => "$beschrijving",
+                'render_template'   => "template-parts/blocks/blok-$x.php",
+                'category'          => '...',
+                'icon'              => 'admin-comments',
+                'keywords'          => array( "$naam" ),
+            ));
+            
+        }
     }
 }
 add_action('acf/init', 'my_acf_init_block_types');

@@ -1,9 +1,10 @@
 <?php 
-
 /*--------------------------------------------------------------------------------------*\
 | ADD COLOURS PAGE
 \*--------------------------------------------------------------------------------------*/
-function ACF_colourpage() {   
+
+
+function ACF_colourspage() {
     acf_add_local_field_group(array(
         'key' => 'group_6315dce19cbdd',
         'title' => 'Colours',
@@ -87,7 +88,7 @@ function ACF_colourpage() {
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'options page',
+                    'value' => 'Colours',
                 ),
             ),
         ),
@@ -103,9 +104,8 @@ function ACF_colourpage() {
     ));
 }
 if( function_exists('acf_add_local_field_group') ){
-    add_action('acf/init', 'ACF_colourpage');
+    add_action('acf/init', 'ACF_colourspage');
 }
-
     
 /*--------------------------------------------------------------------------------------*\
 | ADD OPTIONS PAGE
@@ -270,7 +270,7 @@ function ACF_optionspage() {
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'settings',
+                    'value' => 'Settings',
                 ),
             ),
         ),

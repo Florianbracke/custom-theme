@@ -4,8 +4,9 @@
 \*--------------------------------------------------------------------------------------*/
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/theme-options.php';
-require get_template_directory() . '/template-parts/block-patterns.php';
 
+require get_template_directory() . '/inc/acf_settings.php';
+require get_template_directory() . '/inc/add_blocks.php';
 
 
 /*--------------------------------------------------------------------------------------*\
@@ -44,32 +45,39 @@ add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 /*--------------------------------------------------------------------------------------*\
 | ADD SETTINGS PAGE 
 \*--------------------------------------------------------------------------------------*/
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Settings',
-		'menu_title'	=> 'Settings',
-		'menu_slug' 	=> 'Settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false,
-		'position'		=> '2',
-		'icon_url'		=> 'dashicons-admin-generic
-		'
-	));
+function my_acf_setting_init() {
+	if( function_exists('acf_add_options_page') ) {
+		acf_add_options_page(array(
+			'page_title' 	=> 'Settings',
+			'menu_title'	=> 'Settings',
+			'menu_slug' 	=> 'Settings',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false,
+			'position'		=> '2',
+			'icon_url'		=> 'dashicons-admin-generic
+			'
+		));
+	}
 }
+add_action('acf/init', 'my_acf_setting_init');
 /*--------------------------------------------------------------------------------------*\
 | ADD COLOURS PAGE 
 \*--------------------------------------------------------------------------------------*/
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Colours',
-		'menu_title'	=> 'Colours',
-		'menu_slug' 	=> 'Colours',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false,
-		'position'		=> '3',
-		'icon_url'		=> 'dashicons-admin-appearance'
-	));
+function my_acf_colour_init() {
+	if( function_exists('acf_add_options_page') ) {
+		acf_add_options_page(array(
+			'page_title' 	=> 'Colours',
+			'menu_title'	=> 'Colours',
+			'menu_slug' 	=> 'Colours',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false,
+			'position'		=> '3',
+			'icon_url'		=> 'dashicons-admin-appearance'
+		));
+	}
 }
+add_action('acf/init', 'my_acf_colour_init');
+
 /*--------------------------------------------------------------------------------------*\
 | ADD COLOURS & SETTINGS TO ADMIN BAR 
 \*--------------------------------------------------------------------------------------*/
