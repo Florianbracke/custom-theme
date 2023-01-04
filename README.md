@@ -3,7 +3,7 @@ A collection of functions and files poored into a gutenberg oriented theme.
 Works best in combination with ACF Pro plugin. 
 No other plugins required. 
 
-## HOW TO USE
+## How to use
 1. Make a WordPress v6+ installation on your host/server
 2. Download this repo
 3. Zip this repo
