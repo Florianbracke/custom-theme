@@ -132,29 +132,39 @@ add_filter("acf/load_field/name=backgroundColor", "acf_load_color_field_choices"
 | LOAD COLOURS INTO INLINE CSS & EDITOR COLOUR PALETTE
 \*--------------------------------------------------------------------------------------*/
 function theme_colours(){   
-	if( have_rows('theme_colours', 'option') ): 
 
-		$color_array = array();
+	if( have_rows('colours', 'option') ): 
 
-		while( have_rows('theme_colours', 'option') ) : the_row();
+			$default_text_color = get_field('default_text_color');
+			$accent_text_color_one = get_field('accent_text_color_one');
+			$accent_text_color_two = get_field('accent_text_color_two');
+			$accent_text_color_three = get_field('accent_text_color_three');
+			$default_background_color = get_field('default_background_color');
+			$accent_background_color_one = get_field('accent_background_color_one');
+			$accent_background_color_two = get_field('accent_background_color_two');
+			$accent_background_color_three = get_field('accent_background_color_three');
+			$default_filled_button_text_color = get_field('default_filled_button_text_color');
+			$default_filled_button_background_color = get_field('default_filled_button_background_color');
+			$default_outlined_button_text_color = get_field('default_outlined_button_text_color');
+			$default_outlined_button_background_color = get_field('default_outlined_button_background_color');
 
-			$text_option = get_sub_field('color_name', 'option');
-			$color_option = get_sub_field('color_value');
-			$color_array[] = array(
-				'name'  => __( $text_option ),
-				'slug'  => __( $text_option ),
-				'color' => __( $color_option ),
-			);
-	
-		endwhile; 
 	endif; ?>
  
     <style>
         :root{
           	<?php 
-                foreach($color_array as $color){
-                    echo "--color-" . $color["name"] . ":" . $color['color'] . ";";
-                }
+                    echo "default-text-color:" . $default_text_color . ";";
+					echo "accent-text-color-one:" . $accent_text_color_one . ";";
+					echo "accent-text-color-two:" . $accent_text_color_two . ";";
+					echo "accent-text-color-three:" . $accent_text_color_three . ";";
+					echo "default-background-color:" . $default_background_color . ";";
+					echo "accent-background-color-one:" . $accent_background_color_one . ";";
+					echo "accent-background-color-two:" . $accent_background_color_two . ";";
+					echo "accent-background-color-three:" . $accent_background_color_three . ";";
+					echo "default-filled-button-text-color:" . $default_filled_button_text_color . ";";
+					echo "default-filled-button-background-color:" . $default_filled_button_background_color . ";";
+					echo "default-outlined-button-text-color:" . $default_outlined_button_text_color . ";";
+					echo "default-outlined-button-background-color:" . $default_outlined_button_background_color . ";";
             ?>
         }
     </style>
@@ -186,31 +196,6 @@ function color_palette(){
 	endif;
 }
 add_action( 'after_setup_theme', 'color_palette' );
-
-
-/*--------------------------------------------------------------------------------------*\
-| STYLE ACF OPTIONS PAGE
-\*--------------------------------------------------------------------------------------*/
-if( function_exists('acf_add_options_page') ) {
-	function my_acf_admin_head() {
-	    ?>
-	    <style type="text/css">
-			.postbox > div.acf-fields > div.acf-field > .acf-label{
-				padding: 8px;
-				background: #d6d5bf;
-			}
-			.acf-field{
-				background: #f8f8f4;
-			}
-		.acf-postbox > .-top > .acf-field, .acf-postbox > .-top > .acf-field-group{
-				background: #e9e9df;
-			}
-	    </style>
-	    <?php
-	}
-	add_action('acf/input/admin_head', 'my_acf_admin_head');
-}
-	
 
 
 
