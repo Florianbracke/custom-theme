@@ -134,37 +134,39 @@ add_filter("acf/load_field/name=backgroundColor", "acf_load_color_field_choices"
 function theme_colours(){   
 
 	if( have_rows('colours', 'option') ): 
-
-			$default_text_color = get_field('default_text_color');
-			$accent_text_color_one = get_field('accent_text_color_one');
-			$accent_text_color_two = get_field('accent_text_color_two');
-			$accent_text_color_three = get_field('accent_text_color_three');
-			$default_background_color = get_field('default_background_color');
-			$accent_background_color_one = get_field('accent_background_color_one');
-			$accent_background_color_two = get_field('accent_background_color_two');
-			$accent_background_color_three = get_field('accent_background_color_three');
-			$default_filled_button_text_color = get_field('default_filled_button_text_color');
-			$default_filled_button_background_color = get_field('default_filled_button_background_color');
-			$default_outlined_button_text_color = get_field('default_outlined_button_text_color');
-			$default_outlined_button_background_color = get_field('default_outlined_button_background_color');
-
+ 		while( have_rows('colours', 'option') ): the_row(); 
+			$default_text_color = get_sub_field('default_text_color');
+			$accent_text_color_one = get_sub_field('accent_text_color_one');
+			$accent_text_color_two = get_sub_field('accent_text_color_two');
+			$accent_text_color_three = get_sub_field('accent_text_color_three');
+			$default_heading_text_color = get_sub_field('default_heading_text_color');
+			$default_background_color = get_sub_field('default_background_color');
+			$accent_background_color_one = get_sub_field('accent_background_color_one');
+			$accent_background_color_two = get_sub_field('accent_background_color_two');
+			$accent_background_color_three = get_sub_field('accent_background_color_three');
+			$default_filled_button_text_color = get_sub_field('default_filled_button_text_color');
+			$default_filled_button_background_color = get_sub_field('default_filled_button_background_color');
+			$default_outlined_button_text_color = get_sub_field('default_outlined_button_text_color');
+			$default_outlined_button_background_color = get_sub_field('default_outlined_button_background_color');
+		endwhile;
 	endif; ?>
- 
+
     <style>
         :root{
           	<?php 
-                    echo "default-text-color:" . $default_text_color . ";";
-					echo "accent-text-color-one:" . $accent_text_color_one . ";";
-					echo "accent-text-color-two:" . $accent_text_color_two . ";";
-					echo "accent-text-color-three:" . $accent_text_color_three . ";";
-					echo "default-background-color:" . $default_background_color . ";";
-					echo "accent-background-color-one:" . $accent_background_color_one . ";";
-					echo "accent-background-color-two:" . $accent_background_color_two . ";";
-					echo "accent-background-color-three:" . $accent_background_color_three . ";";
-					echo "default-filled-button-text-color:" . $default_filled_button_text_color . ";";
-					echo "default-filled-button-background-color:" . $default_filled_button_background_color . ";";
-					echo "default-outlined-button-text-color:" . $default_outlined_button_text_color . ";";
-					echo "default-outlined-button-background-color:" . $default_outlined_button_background_color . ";";
+			echo "--default-text-color:" . $default_text_color . ";"; 
+			echo "--accent-text-color-one:" . $accent_text_color_one . ";";
+			echo "--accent-text-color-two:" . $accent_text_color_two . ";";
+			echo "--accent-text-color-three:" . $accent_text_color_three . ";";
+			echo "--default-heading-text-color:" . $default_heading_text_color . ";"; 
+			echo "--default-background-color:" . $default_background_color . ";";
+			echo "--accent-background-color-one:" . $accent_background_color_one . ";";
+			echo "--accent-background-color-two:" . $accent_background_color_two . ";";
+			echo "--accent-background-color-three:" . $accent_background_color_three . ";";
+			echo "--default-filled-button-text-color:" . $default_filled_button_text_color . ";";
+			echo "--default-filled-button-background-color:" . $default_filled_button_background_color . ";";
+			echo "--default-outlined-button-text-color:" . $default_outlined_button_text_color . ";";
+			echo "--default-outlined-button-background-color:" . $default_outlined_button_background_color . ";";
             ?>
         }
     </style>
@@ -174,26 +176,50 @@ add_action('wp_head','theme_colours');
 
 
 function color_palette(){
-
-	if( have_rows('theme_colours', 'option') ): 
-		
-		$color_array = array();
-
-		while( have_rows('theme_colours', 'option') ) : the_row();
-
-			$text_option = get_sub_field('color_name', 'option');
-			$color_option = get_sub_field('color_value');
-			$color_array[] = array(
-					'name'  => __( $text_option ),
-					'slug'  => __( $text_option ),
-					'color' => __( $color_option ),
-			);
 	
-		endwhile; 
+	$color_array = array();
 	
-		add_theme_support( 'editor-color-palette', $color_array );
+	if( have_rows('colours', 'option') ): 
+ 		while( have_rows('colours', 'option') ): the_row(); 
+			$default_text_color = get_sub_field('default_text_color');
+			$accent_text_color_one = get_sub_field('accent_text_color_one');
+			$accent_text_color_two = get_sub_field('accent_text_color_two');
+			$accent_text_color_three = get_sub_field('accent_text_color_three');
+			$default_heading_text_color = get_sub_field('default_heading_text_color');
+			$default_background_color = get_sub_field('default_background_color');
+			$accent_background_color_one = get_sub_field('accent_background_color_one');
+			$accent_background_color_two = get_sub_field('accent_background_color_two');
+			$accent_background_color_three = get_sub_field('accent_background_color_three');
+			$default_filled_button_text_color = get_sub_field('default_filled_button_text_color');
+			$default_filled_button_background_color = get_sub_field('default_filled_button_background_color');
+			$default_outlined_button_text_color = get_sub_field('default_outlined_button_text_color');
+			$default_outlined_button_background_color = get_sub_field('default_outlined_button_background_color');
+		endwhile;
+	endif; 
 
-	endif;
+	
+	
+	if($default_text_color) : $color_array[] = array( 'name'  => __(  'default_text_color'  ),'slug'  => __(  'default_text_color'  ), 'color' => __( $default_text_color ),); endif;
+	if($accent_text_color_one) : $color_array[] = array( 'name'  => __( 'accent_text_color_one' ),'slug'  => __( 'accent_text_color_one' ), 'color' => __( $accent_text_color_one ),); endif;
+	if($accent_text_color_two) : $color_array[] = array( 'name'  => __( 'accent_text_color_two' ),'slug'  => __( 'accent_text_color_two' ), 'color' => __( $accent_text_color_two ),); endif;
+	if($accent_text_color_three) : $color_array[] = array( 'name'  => __( 'accent_text_color_three' ),'slug'  => __( 'accent_text_color_three' ), 'color' => __( $accent_text_color_three ),); endif;
+	if($default_heading_text_color) : $color_array[] = array( 'name'  => __( 'default_heading_text_color' ),'slug'  => __( 'default_heading_text_color' ), 'color' => __( $default_heading_text_color ),); endif;
+	if($default_background_color) : $color_array[] = array( 'name'  => __( 'default_background_color' ),'slug'  => __( 'default_background_color' ), 'color' => __( $default_background_color ),); endif;
+	if($accent_background_color_one) : $color_array[] = array( 'name'  => __( 'accent_background_color_one' ),'slug'  => __( 'accent_background_color_one' ), 'color' => __( $accent_background_color_one ),); endif;
+	if($accent_background_color_two) : $color_array[] = array( 'name'  => __( 'accent_background_color_two' ),'slug'  => __( 'accent_background_color_two' ), 'color' => __( $accent_background_color_two ),); endif;
+	if($accent_background_color_three) : $color_array[] = array( 'name'  => __( 'accent_background_color_three' ),'slug'  => __( 'accent_background_color_three' ), 'color' => __( $accent_background_color_three ),); endif;
+	if($default_filled_button_text_color) : $color_array[] = array( 'name'  => __( 'default_filled_button_text_color' ),'slug'  => __( 'default_filled_button_text_color' ), 'color' => __( $default_filled_button_text_color ),); endif;
+	if($default_filled_button_background_color) : $color_array[] = array( 'name'  => __( 'default_filled_button_background_color' ),'slug'  => __( 'default_filled_button_background_color' ), 'color' => __( $default_filled_button_background_color ),); endif;
+	if($default_outlined_button_text_color) : $color_array[] = array( 'name'  => __( 'default_outlined_button_text_color' ),'slug'  => __( 'default_outlined_button_text_color' ), 'color' => __( $default_outlined_button_text_color ),); endif;
+	if($default_outlined_button_background_color) : $color_array[] = array( 'name'  => __( 'default_outlined_button_background_color' ),'slug'  => __( 'default_outlined_button_background_color' ), 'color' => __( $default_outlined_button_background_color ),); endif;
+
+	$result = [];
+	foreach ($color_array as $row) {
+		$result[$row['color']] = $row;
+	}
+
+	add_theme_support( 'editor-color-palette', array_values($result) );
+	
 }
 add_action( 'after_setup_theme', 'color_palette' );
 
