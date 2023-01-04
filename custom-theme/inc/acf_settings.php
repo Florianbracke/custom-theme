@@ -120,7 +120,7 @@ function ACF_optionspage() {
                 'label' => 'Gegevens',
                 'name' => 'gegevens',
                 'type' => 'group',
-                'instructions' => 'Vul hier de gegevens van je bedrijf in. Dit wordt aan de klanten getoont.',
+                'instructions' => 'Insert company info',
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -150,7 +150,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a245464403',
-                        'label' => 'Telefoon nummer',
+                        'label' => 'Phone',
                         'name' => 'telefoon_nummer',
                         'type' => 'text',
                         'instructions' => '',
@@ -169,7 +169,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a246c64404',
-                        'label' => 'Straat + nummer',
+                        'label' => 'Street + number',
                         'name' => 'straat_nummer',
                         'type' => 'text',
                         'instructions' => '',
@@ -188,7 +188,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a248164405',
-                        'label' => 'Gemeente + postcode',
+                        'label' => 'Location + postalcode',
                         'name' => 'gemeente_postcode',
                         'type' => 'text',
                         'instructions' => '',
@@ -207,7 +207,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a258c8634f',
-                        'label' => 'Naam bedrijf',
+                        'label' => 'Name company',
                         'name' => 'naam_bedrijf',
                         'type' => 'text',
                         'instructions' => '',
@@ -226,7 +226,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a23b4a16cf',
-                        'label' => 'Maatschappelijke zetel',
+                        'label' => 'registered office adress',
                         'name' => 'maatschappelijke_zetel',
                         'type' => 'text',
                         'instructions' => '',
@@ -245,7 +245,7 @@ function ACF_optionspage() {
                     ),
                     array(
                         'key' => 'field_636a23afa16ce',
-                        'label' => 'Ondernemingsnummer',
+                        'label' => 'Enterprise number',
                         'name' => 'ondernemingsnummer',
                         'type' => 'text',
                         'instructions' => '',
