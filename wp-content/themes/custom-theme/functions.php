@@ -31,37 +31,153 @@ add_action( 'wp_print_styles', 'styles_load' );
 function smartwp_remove_wp_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
+	wp_dequeue_style( 'global-styles-inline-css' );
+    wp_dequeue_style( 'wc-blocks-style' ); 
+ 	wp_dequeue_style( 'global-styles' );
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
+
+
+
+
 /*--------------------------------------------------------------------------------------*\
-| ADD OPTION PAGE -> NEED ACF 
+| ADD SETTINGS PAGE 
 \*--------------------------------------------------------------------------------------*/
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-		'page_title' 	=> 'Consero settings',
-		'menu_title'	=> 'Consero settings',
-		'menu_slug' 	=> 'Consero settings',
+		'page_title' 	=> 'Settings',
+		'menu_title'	=> 'Settings',
+		'menu_slug' 	=> 'Settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false,
 		'position'		=> '2',
-		'icon_url'		=> 'dashicons-clock'
+		'icon_url'		=> 'dashicons-admin-generic
+		'
 	));
 }
-
+/*--------------------------------------------------------------------------------------*\
+| ADD COLOURS PAGE 
+\*--------------------------------------------------------------------------------------*/
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Colours',
+		'menu_title'	=> 'Colours',
+		'menu_slug' 	=> 'Colours',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+		'position'		=> '3',
+		'icon_url'		=> 'dashicons-admin-appearance'
+	));
+}
+/*--------------------------------------------------------------------------------------*\
+| ADD COLOURS & SETTINGS TO ADMIN BAR 
+\*--------------------------------------------------------------------------------------*/
 function wpb_custom_toolbar_link($wp_admin_bar) {
-	if( function_exists('acf_add_options_page') ) {
-	     	$args = array(
-			'title' => 'Consero settings', 
-		 	'href' => '/wp-admin/admin.php?page=Consero+settings', 
-	     	);
 
-	     	$wp_admin_bar->add_node($args);
- 		}
+	if( function_exists('acf_add_options_page') ) {
+		$args = array(
+			'title' => 'Settings', 
+			'href' => '/wp-admin/admin.php?page=Settings', 
+		);
+		$wp_admin_bar->add_node($args);
+
+		$args2 = array(
+			'title' => 'Colours', 
+			'href' => '/wp-admin/admin.php?page=Colours', 
+		);
+		$wp_admin_bar->add_node($args2);
+ 	}
 }
 add_action('admin_bar_menu', 'wpb_custom_toolbar_link', 999);
 
+
+
+/*--------------------------------------------------------------------------------------*\
+| LOAD COLOURS INTO BLOCK
+\*--------------------------------------------------------------------------------------*/
+function acf_load_color_field_choices( $field ) {
+	
+	if( function_exists('acf_add_options_page') ){
+
+		$field["choices"] = array();
+
+		if( have_rows("theme_colours", "option") ) {
+			while( have_rows("theme_colours", "option") ) {
+
+				the_row();
+				$value = get_sub_field("color_value");
+				$label = get_sub_field("color_name");
+				$field['choices'][ $value ] = $label;
+
+			}
+		}
+
+		return $field;
+
+	}
+}
+add_filter("acf/load_field/name=backgroundColor", "acf_load_color_field_choices");
+
+
+/*--------------------------------------------------------------------------------------*\
+| LOAD COLOURS INTO INLINE CSS & EDITOR COLOUR PALETTE
+\*--------------------------------------------------------------------------------------*/
+function theme_colours(){   
+	if( have_rows('theme_colours', 'option') ): 
+
+		$color_array = array();
+
+		while( have_rows('theme_colours', 'option') ) : the_row();
+
+			$text_option = get_sub_field('color_name', 'option');
+			$color_option = get_sub_field('color_value');
+			$color_array[] = array(
+				'name'  => __( $text_option ),
+				'slug'  => __( $text_option ),
+				'color' => __( $color_option ),
+			);
+	
+		endwhile; 
+	endif; ?>
+ 
+    <style>
+        :root{
+          	<?php 
+                foreach($color_array as $color){
+                    echo "--color-" . $color["name"] . ":" . $color['color'] . ";";
+                }
+            ?>
+        }
+    </style>
+<?php }
+add_action('wp_head','theme_colours');
+
+
+
+function color_palette(){
+
+	if( have_rows('theme_colours', 'option') ): 
+		
+		$color_array = array();
+
+		while( have_rows('theme_colours', 'option') ) : the_row();
+
+			$text_option = get_sub_field('color_name', 'option');
+			$color_option = get_sub_field('color_value');
+			$color_array[] = array(
+					'name'  => __( $text_option ),
+					'slug'  => __( $text_option ),
+					'color' => __( $color_option ),
+			);
+	
+		endwhile; 
+	
+		add_theme_support( 'editor-color-palette', $color_array );
+
+	endif;
+}
+add_action( 'after_setup_theme', 'color_palette' );
 
 
 /*--------------------------------------------------------------------------------------*\
@@ -144,7 +260,6 @@ function get_reusable_block( $block_id ){
 | ADD AND REMOVE BLOCK PATTERN CATEGORIES
 \*--------------------------------------------------------------------------------------*/
 function removeCorePatterns() {
-    	remove_theme_support('core-block-patterns');
 	unregister_block_pattern_category('buttons');
 	unregister_block_pattern_category('columns');
 	unregister_block_pattern_category('gallery');
@@ -155,37 +270,3 @@ function removeCorePatterns() {
 add_action('after_setup_theme', 'removeCorePatterns');
 
 
-
-/*--------------------------------------------------------------------------------------*\
-| CREATE POST OBJECT, AUTOMATIC COOKIE/PRIVACY/...
-\*--------------------------------------------------------------------------------------*/
-// automatically create options page + data for privacy policy, cookie policy, ...
-function add_pages() {
-	if( get_field('gegevens','option')){
-
-		$directory = get_stylesheet_directory() . "/template-parts/pages/";
-		$filecount = count(glob($directory . "*"));
-
-		if ( !get_option('run_only_once_1') ){
-
-			for ($x = 1; $x <= $filecount; $x++) {
-
-				require get_stylesheet_directory() . "/template-parts/pages/page-{$x}.php";
-
-				$page = array(
-					'post_title'    => "$post_title",
-					'post_content'  => "$post_content",
-					'post_status'   => 'publish',
-					'post_type'		=> 'page',
-				);
-
-				wp_insert_post( $page );
-				add_option('run_only_once_111111011111011', 1); 
-
-			}
-		} 
-	}
-}
-
-//add_action( 'after_setup_theme', 'add_pages' );
-	
