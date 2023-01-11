@@ -39,119 +39,119 @@
 | Character Styles
 \*--------------------------------------------------------------------------------------*/
 body{
-font-family: 'Montserrat', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 30px;
-color: var(--color-zwart);
-letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--default-text-color);
+    letter-spacing: 2px;
 }
 
 h1 {
-font-family: 'aller', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 80px;
-line-height: 1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: calc( 1.5 * var(--content-padding-m));
+    font-family: 'aller', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: calc( 1.5 * var(--content-padding-m));
 }
 
 h2 {
-font-family: 'aller', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 1.1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: var(--content-padding-m);
+    font-family: 'aller', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-m);
 }
 h3, figcaption {
-font-family: 'Effra', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 1.1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: var(--content-padding-m);
+    font-family: 'Effra', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-m);
 }
 h4 {
-font-family: 'aller', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 1.1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: var(--content-padding-m);
+    font-family: 'aller', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-m);
 }
 h5 {
-font-family: 'aller', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 1.1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: var(--content-padding-m);
+    font-family: 'aller', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-m);
 }
 h6 {
-font-family: 'aller', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 1.1;
-letter-spacing: 2px;
-color: var(--color-zwart);
-margin-top: 0;
-margin-bottom: var(--content-padding-m);
+    font-family: 'aller', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: var(--content-padding-m);
 }
 p {
-font-family: 'Montserrat', sans-serif;
-font-weight: 400;
-font-size: 18px;
-line-height: 1.45;
-letter-spacing: 0px;
-color: var(--color-licht-zwart);
-margin-top: 0;
-margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: 0px;
+    color: var(--default-heading-text-color);
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 p > a{
-color: var(--color-licht-zwart);
+    color: var(--accent-text-color-one);
 }
 a {
-font-family: 'Montserrat', sans-serif;
-text-decoration: none;
-color: var(--color-licht-zwart);
-margin-top: 0;
-line-height: 1.1;
-font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: var(--accent-text-color-one);
+    margin-top: 0;
+    line-height: 1.1;
+    font-size: 16px;
 }
 a.wp-block-button__link{
-font-family: 'Montserrat', sans-serif;
-text-decoration: none;
-color: var(--color-licht-zwart);
-margin-top: 0;
-font-weight: 400;
-line-height: 1.1;
-font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: var(--accent-text-color-one);
+    margin-top: 0;
+    font-weight: 400;
+    line-height: 1.1;
+    font-size: 16px;
 }
 li {
-font-family: 'Montserrat', sans-serif;
-font-weight: 400;
-font-size: 16px;
-line-height: 1.25;
-letter-spacing: 0px;
-color: var(--color-licht-zwart);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0px;
+    color: var(--default-text-color);
 }
 
 
@@ -161,26 +161,26 @@ color: var(--color-licht-zwart);
 | Block Color
 \*--------------------------------------------------------------------------------------*/
 .has-zwart-background-color {
-background-color: var(--color-zwart);
+    background-color: var(--color-zwart);
 }
 .has-licht-zwart-background-color {
-background-color: var(--color-licht-zwart);
+    background-color: var(--color-licht-zwart);
 }
 .has-grijs-background-color{
-background-color: var(--color-grijs);
+    background-color: var(--color-grijs);
 }
 .has-licht-grijs-background-color{
-background-color: var(--color-licht-grijs);
+    background-color: var(--color-licht-grijs);
 }
 .has-wit-background-color{
-background-color: var(--color-wit);
+    background-color: var(--color-wit);
 }
 
 .has-bordeaux-background-color{
-background-color: var(--color-bordeaux);
+    background-color: var(--color-bordeaux);
 }
 .has-geel-background-color{
-background-color: var(--color-geel);
+    background-color: var(--color-geel);
 }
 
 
@@ -193,30 +193,65 @@ background-color: var(--color-geel);
 /*--------------------------------------------------------------------------------------*\
 | Text Color
 \*--------------------------------------------------------------------------------------*/
-.has-zwart-color {
-color: var(--color-zwart);
+.has-default-text-color-color{
+    color: var(--default-text-color)
 }
-.has-licht-zwart-color {
-color: var(--color-licht-zwart);
+.has-accent-text-color-one-color{
+    color: var(--accent-text-color-one)
 }
-.has-grijs-color{
-color: var(--color-grijs);
+.has-accent-text-color-two-color{
+    color: var(--accent-text-color-two)
 }
-.has-licht-grijs-color{
-color: var(--color-licht-grijs);
+.has-accent-text-color-three-color{
+    color: var(--accent-text-color-three)
 }
-.has-wit-color{
-color: var(--color-wit);
+.has-default-heading-text-color-color{
+    color: var(--default-heading-text-color)
 }
-
-.has-bordeaux-color{
-color: var(--color-bordeaux);
-}
-.has-geel-color{
-color: var(--color-geel);
+.has-default-background-color-color{
+    color: var(--default-background-color)
 }
 
+.has-accent-background-color-one-color{
+    color: var(--accent-background-color-one)
+}
+.has-accent-background-color-two-color{
+    color: var(--accent-background-color-two)
+}
+.has-accent-background-color-three-color{
+    color: var(--accent-background-color-three)
+}
+.has-default-filled-button-text-color-color{
+    color: var(--default-filled-button-text-color)
+}
+.has-default-filled-button-background-color-color{
+    color: var(--default-filled-button-background-color)
+}
+.has-default-outlined-button-text-color-color{
+    color: var(--default-outlined-button-text-color)
+}
+.has-default-filled-button-background-color-color{
+    color: var(--default-filled-button-background-color)
+}
 
+
+/* var(--default-text-color)
+var(--accent-text-color-one)
+var(--accent-text-color-two)
+var(--accent-text-color-three)
+
+var(--default-heading-text-color)
+var(--default-background-color)
+
+var(--accent-background-color-one)
+var(--accent-background-color-two)
+var(--accent-background-color-three)
+
+var(--default-filled-button-text-color)
+var(--default-filled-button-background-color)
+
+var(--default-outlined-button-text-color)
+var(--default-outlined-button-background-color) */
 
 .has-zwart-color a{
 color: var(--color-zwart);
