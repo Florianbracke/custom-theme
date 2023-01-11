@@ -1,131 +1,157 @@
 :root{
-    /*--------------------------------------------------------------------------------------*\
-    | Content Width
-    \*--------------------------------------------------------------------------------------*/
-        --content-width-smallest: 95%;
-        --content-width-small: 900px;
-        --content-width-medium: 1350px;
-        --content-width-big: 1800px;
-        --content-width-full: 100%;
-    
-        --border-radius: 11px;
+	
+    --content-gap: 64px;
 
-    /*--------------------------------------------------------------------------------------*\
-    | Padding Content Width
-    \*--------------------------------------------------------------------------------------*/
-        --content-padding-huge: 120px;
-        --content-padding-big: 60px;
-        --content-padding-medium: 30px;
-        --content-padding-small: 15px;
-    
-}
-    
+    --content-width-xs: 95%;
+    --content-width-s: 900px;
+    --content-width-m: 1350px;
+    --content-width-l: 1800px;
+    --content-width-xl: 1800px;
+
+    --border-radius: 29px;
+
+    --content-padding-xl: 64px;
+    --content-padding-l: 32px;
+    --content-padding-m: 16px;
+    --content-padding-s: 8px;
+
+    --section-padding-xl: 256px;
+    --section-padding-l: 128px;
+    --section-padding-m: 64px;
+    --section-padding-s: 32px;
+     --section-padding-xs: 16px;
+    --section-padding-xxs: 8px;
+
+    --color-geel: #EBA700;
+    --color-bordeaux: #772235;
+
+    --color-zwart:#242424;
+    --color-licht-zwart: #414141;
+    --color-grijs: #707070;
+    --color-licht-grijs: #F8F8F8;
+    --color-wit: #ffffff;
+
+}      	
+        
+
 
 /*--------------------------------------------------------------------------------------*\
 | Character Styles
 \*--------------------------------------------------------------------------------------*/
 body{
-    font-family: 'Cabin', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    color: var(--color-black);
-    letter-spacing: 2px;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+color: var(--color-zwart);
+letter-spacing: 2px;
 }
 
 h1 {
-    font-family: 'Baskerville URW', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-medium);
+font-family: 'aller', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 80px;
+line-height: 1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: calc( 1.5 * var(--content-padding-m));
 }
 
 h2 {
-    font-family: 'Baskerville URW';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-small);   
+font-family: 'aller', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 1.1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: var(--content-padding-m);
 }
 h3, figcaption {
-    font-family: 'Baskerville URW';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-small);
+font-family: 'Effra', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 1.1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: var(--content-padding-m);
 }
 h4 {
-    font-family: 'Baskerville URW';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-small);
+font-family: 'aller', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 1.1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: var(--content-padding-m);
 }
 h5 {
-    font-family: 'Gopher';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-small);
+font-family: 'aller', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 1.1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: var(--content-padding-m);
 }
 h6 {
-    font-family: 'Gopher';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    color: var(--color-brown);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-small);
+font-family: 'aller', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.1;
+letter-spacing: 2px;
+color: var(--color-zwart);
+margin-top: 0;
+margin-bottom: var(--content-padding-m);
 }
 p {
-    font-family: 'Work Sans, Light', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.25;
-    letter-spacing: 0px;
-    color: var(--color-black);
-    margin-top: 0;
-    margin-bottom: var(--content-padding-medium);
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.45;
+letter-spacing: 0px;
+color: var(--color-licht-zwart);
+margin-top: 0;
+margin-bottom: 12px;
+}
+p > a{
+color: var(--color-licht-zwart);
 }
 a {
-    font-family: 'Helvetica Neue', sans-serif;
-    text-decoration: none;
-    color: var(--color-black);
-    margin-top: 0;
-    line-height: 1.1;
-    font-size: 16px;
+font-family: 'Montserrat', sans-serif;
+text-decoration: none;
+color: var(--color-licht-zwart);
+margin-top: 0;
+line-height: 1.1;
+font-size: 16px;
+}
+a.wp-block-button__link{
+font-family: 'Montserrat', sans-serif;
+text-decoration: none;
+color: var(--color-licht-zwart);
+margin-top: 0;
+font-weight: 400;
+line-height: 1.1;
+font-size: 16px;
 }
 li {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.25;
-    letter-spacing: 0px;
-    color: var(--color-black);
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.25;
+letter-spacing: 0px;
+color: var(--color-licht-zwart);
 }
 
 
@@ -134,132 +160,238 @@ li {
 /*--------------------------------------------------------------------------------------*\
 | Block Color
 \*--------------------------------------------------------------------------------------*/
-.has-black-background-color {
-    background-color: var(--color-black);
+.has-zwart-background-color {
+background-color: var(--color-zwart);
 }
-.has-white-background-color {
-    background-color: var(--color-white);
+.has-licht-zwart-background-color {
+background-color: var(--color-licht-zwart);
 }
-.has-yellow-background-color {
-    background-color: var(--color-yellow);
+.has-grijs-background-color{
+background-color: var(--color-grijs);
 }
-.has-lighter-yellow-background-color {
-    background-color: var(--color-lighter-yellow);
+.has-licht-grijs-background-color{
+background-color: var(--color-licht-grijs);
 }
-.has-brown-background-color {
-    background-color: var(--color-brown);
+.has-wit-background-color{
+background-color: var(--color-wit);
 }
-.has-lighter-brown-background-color {
-    background-color: var(--color-lighter-brown);
+
+.has-bordeaux-background-color{
+background-color: var(--color-bordeaux);
 }
-.has-orange-background-color {
-    background-color: var(--color-orange);
+.has-geel-background-color{
+background-color: var(--color-geel);
 }
-.has-lighter-green-background-color {
-    background-color: var(--color-lighter-green);
-}
-.has-green-background-color {
-    background-color: var(--color-green);
-}
-.has-darker-green-background-color {
-    background-color: var(--color-darker-green);
-}
-.has-lighter-green-background-color {
-    background-color: var(--color-lighter-green);
-}
-.has-gray-background-color{
-    background-color: var(--color-gray);
-}
+
+
+
+
+
+
 
 
 /*--------------------------------------------------------------------------------------*\
 | Text Color
 \*--------------------------------------------------------------------------------------*/
-.has-black-color {
-    color: var(--color-black);
+.has-zwart-color {
+color: var(--color-zwart);
 }
-.has-white-color {
-    color: var(--color-white);
+.has-licht-zwart-color {
+color: var(--color-licht-zwart);
 }
-.has-yellow-color {
-    color: var(--color-yellow);
+.has-grijs-color{
+color: var(--color-grijs);
 }
-.has-lighter-yellow-color {
-    color: var(--color-lighter-yellow);
+.has-licht-grijs-color{
+color: var(--color-licht-grijs);
 }
-.has-brown-color {
-    color: var(--color-brown);
+.has-wit-color{
+color: var(--color-wit);
 }
-.has-lighter-brown-color {
-    color: var(--color-lighter-brown);
+
+.has-bordeaux-color{
+color: var(--color-bordeaux);
 }
-.has-orange-color {
-    color: var(--color-orange);
+.has-geel-color{
+color: var(--color-geel);
 }
-.has-green-color {
-    color: var(--color-green);
+
+
+
+.has-zwart-color a{
+color: var(--color-zwart);
 }
-.has-lighter-green-color {
-    color: var(--color-lighter-green);
+.has-licht-black-color a{
+color: var(--color-licht-zwart);
 }
-.has-darker-green-color {
-    color: var(--color-darker-green);
+.has-grijs-color a{
+color: var(--color-grijs);
 }
-.has-gray-color{
-    color: var(--color-gray);
+.has-licht-grijs-color a{
+color: var(--color-licht-grijs);
+}
+.has-wit-color a{
+color: var(--color-wit);
+}
+
+.has-bordeaux-color a{
+color: var(--color-bordeaux);
+}
+.has-geel-color a{
+color: var(--color-geel);
+}
+
+
+.has-zwart-color strong{
+color: var(--color-zwart);
+}
+.has-licht-black-color strong{
+color: var(--color-licht-zwart);
+}
+.has-grijs-color strong{
+color: var(--color-grijs);
+}
+.has-licht-grijs-color strong{
+color: var(--color-licht-grijs);
+}
+.has-wit-color strong{
+color: var(--color-wit);
+}
+
+.has-bordeaux-color strong{
+color: var(--color-bordeaux);
+}
+.has-geel-color strong{
+color: var(--color-geel);
+}
+
+
+
+ul.has-zwart-color li{
+color: var(--color-zwart);
+}
+ul.has-licht-black-color li{
+color: var(--color-licht-zwart);
+}
+ul.has-grijs-color li{
+color: var(--color-grijs);
+}
+ul.has-licht-grijs-color li{
+color: var(--color-licht-grijs);
+}
+ul.has-wit-color li{
+color: var(--color-wit);
+}
+
+ul.has-bordeaux-color li{
+color: var(--color-bordeaux);
+}
+ul.has-geel-color li{
+color: var(--color-geel);
 }
 
 
 /*--------------------------------------------------------------------------------------*\
-| Variables Media Queries
+| MEDIA QUERIES
 \*--------------------------------------------------------------------------------------*/
-@media screen and (max-width: 1200px){
-    h1{
-        font-size: 40px;
-        font-weight: bold;
-    }
-    h2{
-        font-size: 32px;
-        font-weight: bold;
-    }
-    h3,figcaption{
-        size: 24px;
-        font-weight: bold;
-    }
-    h4, h5{
-        font-size: 24px;
-    }
-    p{
-        font-size: 13px;
-    }
-    a{
-        font-size: 16px;
-    }
-    li{
-        font-size: 13px;
-    }
+@media screen and (min-width: 1800px){
+
+}
+@media screen and (max-width: 1800px){
+
+}
+@media screen and (max-width: 1350px){
+body{
+    font-size: 16px;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 32px;
+}
+h3, figcaption {
+    font-size: 28px;
+}
+h4 {
+    font-size: 26px;
+}
+h5 {
+    font-size: 24px;
+}
+h6 {
+    font-size: 22px;
+}
+p {
+    font-size: 16px;
+}
+a {
+    font-size: 14px;
+}
+a.wp-block-button__link{
+    font-size: 14px;
+}
+li {
+    font-size: 14px;
+}
+:root{
+    --content-gap: 48px;
+}
+}
+@media screen and (max-width: 900px){
+
+}
+@media screen and (max-width: 768px){
+:root{
+    --content-gap: 32px;
+}
+body{
+    font-size: 16px;
+}
+h1 {
+    font-size: 38px;
+}
+h2 {
+    font-size: 26px;
+}
+h3, figcaption {
+    font-size: 24px;
+}
+h4 {
+    font-size: 22px;
+}
+h5 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 18px;
+}
+p {
+    font-size: 14px;
+}
+a {
+    font-size: 12px;
+}
+a.wp-block-button__link{
+    font-size: 12px;
+}
+li {
+    font-size: 12px;
 }
 
-@media screen and (max-width: 580px){
-    h1{
-        font-size: 30px;
-    }
-    h2{
-        font-size: 25px;
-    }
-    h3,figcaption{
-        font-size: 18px;
-    }
-    h4, h5{
-        font-size: 18px;
-    }
-    p{
-        font-size: 12px;
-    }
-    a{
-        font-size: 12px;
-    }
-    li{
-        font-size: 12px;
-    }
+}
+@media screen and (max-width: 550px){
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3{
+    font-size: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+
 }
