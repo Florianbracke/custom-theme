@@ -13,13 +13,13 @@ require get_template_directory() . '/inc/add_blocks.php';
 | ENQUEUE STYLES
 \*--------------------------------------------------------------------------------------*/
 function styles_load() {
-    wp_enqueue_style( 'variables-css', get_template_directory_uri() . '/assets/css/variables.css');
-    wp_enqueue_style( 'structural-csss', get_template_directory_uri() . '/assets/css/structural.css', ['variables-css'] );
-    wp_enqueue_style( 'custom-css', get_template_directory_uri() . '/assets/css/custom.css', ['variables-css'] );
-	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/assets/css/header.css', ['variables-css'] );
-	wp_enqueue_style( 'footer-css', get_template_directory_uri() . '/assets/css/footer.css', ['variables-css'] );
-    wp_enqueue_style( 'style-editor-css', get_template_directory_uri() . '/assets/css/style-editor.css', ['variables-css'] );
-	wp_enqueue_style( 'style-editor-frontend-css', get_template_directory_uri() . '/assets/css/style-editor-frontend.css', ['variables-css'] );
+     	wp_enqueue_style( 'variables-css', get_template_directory_uri() . '/assets/css/variables.css', array(), filemtime( get_template_directory() . '/assets/css/variables.css' ));
+    	wp_enqueue_style( 'structural-csss', get_template_directory_uri() . '/assets/css/structural.css', ['variables-css'], filemtime( get_template_directory() .  '/assets/css/structural.css' ));
+    	wp_enqueue_style( 'custom-css', get_template_directory_uri() . '/assets/css/custom.css', ['variables-css'] , filemtime( get_template_directory() . '/assets/css/custom.css' ));
+	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/assets/css/header.css', ['variables-css'] ,  filemtime( get_template_directory() . '/assets/css/header.css' ));
+	wp_enqueue_style( 'footer-css', get_template_directory_uri() . '/assets/css/footer.css', ['variables-css'], filemtime( get_template_directory() . '/assets/css/footer.css'));
+    	wp_enqueue_style( 'style-editor-css', get_template_directory_uri() . '/assets/css/style-editor.css', ['variables-css'] , filemtime( get_template_directory() . '/assets/css/style-editor.css' ));
+	wp_enqueue_style( 'style-editor-frontend-css', get_template_directory_uri() . '/assets/css/style-editor-frontend.css', ['variables-css'], filemtime( get_template_directory() .'/assets/css/style-editor-frontend.css' ));
 
 }
 add_action( 'wp_print_styles', 'styles_load' ); 
