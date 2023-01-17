@@ -126,12 +126,12 @@ p {
     margin-bottom: 12px;
 }
 p > a{
-    color: var(--accent-text-color-one);
+    color: var(--default-filled-button-text-color);
 }
 a {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    color: var(--accent-text-color-one);
+    color: var(--default-filled-button-text-color);
     margin-top: 0;
     line-height: 1.1;
     font-size: 16px;
@@ -139,7 +139,7 @@ a {
 a.wp-block-button__link{
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    color: var(--accent-text-color-one);
+    color: var(--default-filled-button-text-color);
     margin-top: 0;
     font-weight: 400;
     line-height: 1.1;
