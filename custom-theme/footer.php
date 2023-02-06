@@ -25,8 +25,7 @@
                         
             <div class="footer-two">	
 
-              
-
+                       <p>© <?php echo date('Y') . ' ' . $info['naam_bedrijf']; ?> </p>
             </div>
 
         </footer><!-- #colophon -->
