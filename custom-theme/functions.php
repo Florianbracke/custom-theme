@@ -289,3 +289,80 @@ function removeCorePatterns() {
 add_action('after_setup_theme', 'removeCorePatterns');
 
 
+
+/*--------------------------------------------------------------------------------------*\
+| PASSWORD CUSTOMIZATION
+\*--------------------------------------------------------------------------------------*/
+function change_protected_title_prefix() {
+    return '';
+}
+add_filter('protected_title_format', 'change_protected_title_prefix');
+
+add_filter( 'the_password_form', 'wporg_password_form' );
+function wporg_password_form() {
+    global $post;
+    $label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+    $output = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">
+    ' . esc_html__( 'Welkom! ', 'text-domain' ) . '<br><br><br>' . '
+    <label class="pass-label" for="' . $label . '">' . esc_html__( 'Wachtwoord:', 'text-domain' ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" style="background: #ffffff; border:1px solid #999; color:#333333; padding:10px;" size="20" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( 'Aanmelden', 'text-domain' ) . '" />
+    </form>
+    ';
+    return $output;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*\
+| MASONRY LIBRARY
+\*--------------------------------------------------------------------------------------*/
+add_action('wp_footer', 'your_function_name');
+function your_function_name(){
+
+	global $post;
+	//if( get_post_type($post) != 'project' ) return;
+	if( is_admin() ) return; ?>
+	
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+	<script>
+		window.addEventListener('load', (event) => {
+			function setMasonry( cols , containerWidth , gutter = 10 ){	
+
+				let elem = document.querySelector('.wp-block-gallery');		
+				let gutters = cols - 1;
+				let colWidth = ( containerWidth - ( gutters * gutter ) ) / cols;
+				let galleryItems = document.querySelectorAll('.wp-block-gallery .wp-block-image');
+
+				galleryItems.forEach( function(galleryItem){
+					galleryItem.style.width = colWidth + "px";
+				});
+
+				let zeroElem = galleryItems[0];
+				let msnry = new Masonry( elem, {
+				  itemSelector: '.wp-block-image',
+				  columnWidth: zeroElem,
+				  gutter: gutter,
+				});
+			}
+			
+			function initMasonry(){		
+	
+				let galleryItems = document.querySelectorAll('.wp-block-gallery .wp-block-image');
+				let cols = (galleryItems.length) > 4 ? 3 : 2;
+				let style = window.getComputedStyle(document.querySelector('.wp-block-gallery'), null);
+				let containerWidth = parseInt(style.getPropertyValue("width"), 10);
+				cols = (containerWidth > 768) ? cols : 2;
+				setMasonry( cols , containerWidth );
+
+			}			
+
+			initMasonry();	
+
+			addEventListener("resize", (event) => { initMasonry(); });	
+		});
+	</script>
+	<?php
+};
+
+
+
