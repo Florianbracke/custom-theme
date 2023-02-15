@@ -157,10 +157,6 @@ picture{
     flex-wrap: wrap;
 }
 
-.single-gallery-image img{
-	height: 100%;
-}
-
 
 body .wp-block-cover{
 	position: relative;
@@ -184,13 +180,7 @@ body .wp-block-cover img{
 .wp-block-gallery{
 	gap: var(--content-padding-l);
 }
-.wp-block-gallery > figure{
-	width: calc((100% - 2 * var(--content-padding-l))/ 3);
-	height: 400px;
-}
-.wp-block-gallery > figure img{
-	height: 400px;
-}
+
 
 
 
