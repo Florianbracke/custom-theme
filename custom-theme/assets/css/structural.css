@@ -73,6 +73,36 @@ ul.menu{
 	display: grid;
 }
 
+
+
+figure.alignleft{
+    display: flex;
+    justify-content: flex-start;
+}
+figure.alignright{
+    display: flex;
+    justify-content: flex-end;
+}
+body .is-style-cover{
+	max-height: unset;
+}
+body .is-style-cover img{
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+	max-height: unset;
+}
+
+body .is-style-contain{
+	max-height: unset;
+}
+body .is-style-contain:has( > .alignright, > .alignleft, > .aligncenter){
+	width: 100%;
+}
+body .is-style-contain img{
+	object-fit: contain;
+}
+
 figure{
 	margin: 0;
 }
