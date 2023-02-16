@@ -22,7 +22,9 @@ body.page .entry-content .no-padding-bottom{
 
 }
 @media screen and (max-width: 1350px){
-
+	body .column-reverse{
+	    flex-direction: column-reverse;
+	}
 }
 @media screen and (max-width: 900px){
 
