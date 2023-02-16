@@ -330,10 +330,21 @@ color: var(--color-geel);
 | MEDIA QUERIES
 \*--------------------------------------------------------------------------------------*/
 @media screen and (min-width: 1800px){
+}   
 
-}
 @media screen and (max-width: 1800px){
-
+	h1 {
+		margin-bottom: calc( 0.75 * var(--content-padding-xl));
+	}
+	h2 {
+		margin-bottom: calc( 0.75 * var(--content-padding-xl));
+	}
+	h3, figcaption {
+		margin-bottom: calc( 0.75 * var(--content-padding-xl));
+	}
+	h4 {
+		margin-bottom: calc( 0.75 * var(--content-padding-xl));
+	}
 }
 @media screen and (max-width: 1350px){
 body{
@@ -341,15 +352,19 @@ body{
 }
 h1 {
     font-size: 48px;
+	margin-bottom: var(--content-padding-l);
 }
 h2 {
     font-size: 32px;
+	margin-bottom: var(--content-padding-l);
 }
 h3, figcaption {
     font-size: 28px;
+	margin-bottom: var(--content-padding-l);
 }
 h4 {
     font-size: 26px;
+	margin-bottom: var(--content-padding-l);
 }
 h5 {
     font-size: 24px;
@@ -416,17 +431,16 @@ li {
 
 }
 @media screen and (max-width: 550px){
-h1 {
-    font-size: 30px;
-}
-h2 {
-    font-size: 24px;
-}
-h3{
-    font-size: 20px;
-}
-h4 {
-    font-size: 18px;
-}
-
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	h3{
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 18px;
+	}
 }
