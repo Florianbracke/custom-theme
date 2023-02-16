@@ -5,31 +5,19 @@ wp.domReady( () => {
 			label: 'Default',
 			isDefault: true,
 		},
+
 		{
-			name: 'deco1',
-			label: 'Takjes',
+			name: 'cover',
+			label: 'Groot',
+			isDefault: false,
 		},
-        {
-			name: 'deco2',
-			label: 'Graan',
-		},
-       
-	]);
-	wp.blocks.registerBlockStyle( 'core/columns', [ 
 		{
-			name: 'deco1',
-			label: 'Takjes',
-		},
-        {
-			name: 'deco2',
-			label: 'Graan',
-		},
-       
-	]);
-	wp.blocks.registerBlockStyle( 'core/spacer', [ 
-		{
-			name: 'lijn',
-			label: 'Lijn',
+			name: 'contain',
+			label: 'Klein',
+			isDefault: false,
 		},
 	]);
+
+ 	wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+
 } );
