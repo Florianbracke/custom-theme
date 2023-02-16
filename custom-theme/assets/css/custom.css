@@ -1,7 +1,18 @@
 /*--------------------------------------------------------------------------------------*\
 | CUSTOM
 \*--------------------------------------------------------------------------------------*/
-
+body.page .entry-content .no-margin-top{
+	margin-top: 0;
+}
+body.page .entry-content .no-margin-bottom{
+	margin-bottom: 0;
+}
+body.page .entry-content .no-padding-top{
+	padding-top: 0;
+}
+body.page .entry-content .no-padding-bottom{
+	padding-bottom: 0;
+}
 
 
 /*--------------------------------------------------------------------------------------*\
