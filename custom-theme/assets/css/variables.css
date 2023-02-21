@@ -158,31 +158,47 @@ li {
 
 
 /*--------------------------------------------------------------------------------------*\
-| Block Color
+| Background Color
 \*--------------------------------------------------------------------------------------*/
-.has-zwart-background-color {
-    background-color: var(--color-zwart);
+.has-default-text-color-background-color{
+    background-color: var(--default-text-color)
 }
-.has-licht-zwart-background-color {
-    background-color: var(--color-licht-zwart);
+.has-accent-text-color-one-background-color{
+    background-color: var(--accent-text-color-one)
 }
-.has-grijs-background-color{
-    background-color: var(--color-grijs);
+.has-accent-text-color-two-background-color{
+    background-color: var(--accent-text-color-two)
 }
-.has-licht-grijs-background-color{
-    background-color: var(--color-licht-grijs);
+.has-accent-text-color-three-background-color{
+    background-color: var(--accent-text-color-three)
 }
-.has-wit-background-color{
-    background-color: var(--color-wit);
+.has-default-heading-text-color-background-color{
+    background-color: var(--default-heading-text-color)
 }
-
-.has-bordeaux-background-color{
-    background-color: var(--color-bordeaux);
+.has-default-background-color-background-color{
+    background-color: var(--default-background-color)
 }
-.has-geel-background-color{
-    background-color: var(--color-geel);
+.has-accent-background-color-one-background-color{
+    background-color: var(--accent-background-color-one)
 }
-
+.has-accent-background-color-two-background-color{
+    background-color: var(--accent-background-color-two)
+}
+.has-accent-background-color-three-background-color{
+    background-color: var(--accent-background-color-three)
+}
+.has-default-filled-button-text-color-background-color{
+    background-color: var(--default-filled-button-text-color)
+}
+.has-default-filled-button-background-color-background-color{
+    background-color: var(--default-filled-button-background-color)
+}
+.has-default-outlined-button-text-color-background-color{
+    background-color: var(--default-outlined-button-text-color)
+}
+.has-default-outlined-button-background-color-background-color{
+    background-color: var(--default-outlined-button-background-color)
+}
 
 
 
@@ -230,8 +246,8 @@ li {
 .has-default-outlined-button-text-color-color{
     color: var(--default-outlined-button-text-color)
 }
-.has-default-filled-button-background-color-color{
-    color: var(--default-filled-button-background-color)
+.has-default-outlined-button-background-color-color{
+    color: var(--default-outlined-button-background-color)
 }
 
 
