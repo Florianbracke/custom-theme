@@ -316,16 +316,16 @@ function wporg_password_form() {
 /*--------------------------------------------------------------------------------------*\
 | MASONRY LIBRARY
 \*--------------------------------------------------------------------------------------*/
-add_action('wp_footer', 'your_function_name');
 function your_function_name(){
 
 	global $post;
-	//if( get_post_type($post) != 'project' ) return;
+
 	if( is_admin() ) return; ?>
 	
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
 	<script>
+	if( document.querySelector('.wp-block-gallery') ){
 		window.addEventListener('load', (event) => {
 			function setMasonry( cols , containerWidth , gutter = 10 ){	
 
@@ -346,24 +346,28 @@ function your_function_name(){
 				});
 			}
 			
-			function initMasonry(){		
-	
+			
+			function initMasonry(){
+				
 				let galleryItems = document.querySelectorAll('.wp-block-gallery .wp-block-image');
 				let cols = (galleryItems.length) > 4 ? 3 : 2;
 				let style = window.getComputedStyle(document.querySelector('.wp-block-gallery'), null);
 				let containerWidth = parseInt(style.getPropertyValue("width"), 10);
+
 				cols = (containerWidth > 768) ? cols : 2;
+
 				setMasonry( cols , containerWidth );
 
 			}			
-
 			initMasonry();	
 
 			addEventListener("resize", (event) => { initMasonry(); });	
 		});
+	}
 	</script>
 	<?php
 };
 
+add_action('wp_footer', 'your_function_name');
 
 
