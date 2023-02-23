@@ -5,15 +5,19 @@
 \*--------------------------------------------------------------------------------------*/
 function enqueue_my_scripts(){
 
-    foreach( glob( get_template_directory(). '/assets/js/*.js' ) as $file ) {
- 		$filename = substr($file, strrpos($file, '/') + 1);
-        wp_enqueue_script( $filename, get_template_directory_uri().'/assets/js/'.$filename);
-    }
+	$excludes = array('editor.js', 'test.js');
 
-    // foreach( glob( get_template_directory(). '/css/*.css' ) as $file ) {
- 	// 	$filename = substr($file, strrpos($file, '/') + 1);
-    //     wp_enqueue_style( $filename, get_template_directory_uri().'/css/'.$filename);
-    // }
+    	foreach( glob( get_template_directory(). '/assets/js/*.js' ) as $file ) {
+
+ 		$filename = substr($file, strrpos($file, '/') + 1);
+
+		if(!in_array($filename, $excludes)){
+
+        		wp_enqueue_script( $filename, get_template_directory_uri().'/assets/js/'.$filename);
+
+		}   
+
+	}
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
