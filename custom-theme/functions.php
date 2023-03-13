@@ -237,19 +237,38 @@ function custom_toolbar_link($wp_admin_bar) {
 }
 add_action('admin_bar_menu', 'custom_toolbar_link', 999);
 
+/*--------------------------------------------------------------------------------------*\
+| EDITOR STYLES JS
+\*--------------------------------------------------------------------------------------*/
+function be_gutenberg_scripts() {
+	wp_enqueue_script(
+		'be-editor', get_stylesheet_directory_uri() . '/assets/js/editor.js', 
+		array( 'wp-blocks', 'wp-dom' ), 
+		filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ),
+		true
+	);  
+}
+add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
+
 
 /*--------------------------------------------------------------------------------------*\
-| CUSTOM EDITOR STYLES
+| EDITOR STYLES CSS
 \*--------------------------------------------------------------------------------------*/
-function editor_styles_scripts() {
-	wp_enqueue_script( 'be-editor', get_stylesheet_directory_uri() . '/assets/editor.js', array( 'wp-blocks', 'wp-dom' ),
-	filemtime( get_stylesheet_directory() . '/assets/editor.js' ), true );  
-
+function misha_gutenberg_css(){
 	add_theme_support( 'editor-styles' );
 	add_editor_style( '/assets/css/style-editor.css' ); 
-
 }
-//add_action( 'after_setup_theme', 'editor_styles_css' );
+add_action( 'after_setup_theme', 'misha_gutenberg_css' );
+
+function CSS_duplicate() {
+	$destination = get_template_directory() . '/assets/css/style-editor.css';
+	$arrayCSS = file(get_template_directory_uri() . '/assets/css/custom.css');
+	file_put_contents($destination,implode('', $arrayCSS));
+}
+
+add_action('init', 'CSS_duplicate');
+
+
 
 
 
