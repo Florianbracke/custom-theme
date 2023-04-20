@@ -347,7 +347,7 @@ function your_function_name(){
 	if( document.querySelector('.wp-block-gallery') ){
 		window.addEventListener('load', (event) => {
 			function setMasonry( cols , containerWidth , gutter = 10 ){	
-
+				let elems = document.querySelectorAll('.wp-block-gallery');		
 				let elem = document.querySelector('.wp-block-gallery');		
 				let gutters = cols - 1;
 				let colWidth = ( containerWidth - ( gutters * gutter ) ) / cols;
@@ -358,11 +358,13 @@ function your_function_name(){
 				});
 
 				let zeroElem = galleryItems[0];
-				let msnry = new Masonry( elem, {
-				  itemSelector: '.wp-block-image',
-				  columnWidth: zeroElem,
-				  gutter: gutter,
-				});
+				elems.forEach( 
+					element => new Masonry( element, {
+						itemSelector: '.wp-block-image',
+						columnWidth: zeroElem,
+						gutter: gutter,
+					})
+				); 
 			}
 			
 			
