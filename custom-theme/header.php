@@ -54,5 +54,7 @@
                 </div>
 
             </nav>
+		
+	get_template_part('template-parts/content', 'breadcrumbs');
 
         </header>
