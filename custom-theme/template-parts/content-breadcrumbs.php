@@ -22,7 +22,7 @@
 			<a itemprop="item" href="<?php echo get_permalink( $id ); ?>">
 				<span itemprop="name"><?php echo get_the_title( $id ); ?> </span>
 			</a>
-			<meta itemprop="position" content="<?php echo count( $ancestors ); ?>" />
+			<meta itemprop="position" content="<?php echo count( $ancestors ) + 1; ?>" />
 		</li> <?php 
 	}
 ?> </ul> <?php
