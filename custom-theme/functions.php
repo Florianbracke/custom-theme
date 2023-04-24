@@ -305,6 +305,7 @@ function removeCorePatterns() {
 	unregister_block_pattern_category('header');
 	unregister_block_pattern_category('text');
 	unregister_block_pattern_category('uncategorized');
+	register_block_pattern_category( 'Custom', array( 'label' => 'Custom' ));
 }
 add_action('after_setup_theme', 'removeCorePatterns');
 
