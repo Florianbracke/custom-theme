@@ -19,6 +19,7 @@ function wpdocs_register_block_patterns() {
 			   'content'       => "$block",
 			   'description'   => "$beschrijving",
 			   'title'         => "$beschrijving",
+			   'categories'    => array('Custom'),
 		   ]
 
 	   );
