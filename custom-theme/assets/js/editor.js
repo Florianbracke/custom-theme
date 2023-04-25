@@ -21,7 +21,7 @@ wp.domReady( () => {
 
 	wp.blocks.registerBlockStyle( 'core/button', [ 
 		{
-			name: 'underline',
+			name: 'Underline',
 			label: 'underline',
 			isDefault: false,
 		},
