@@ -16,7 +16,16 @@ wp.domReady( () => {
 			label: 'Klein',
 			isDefault: false,
 		},
+		
 	]);
+
+	wp.blocks.registerBlockStyle( 'core/button', [ 
+		{
+			name: 'underline',
+			label: 'underline',
+			isDefault: false,
+		},
+	]);	
 
  	wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
 
