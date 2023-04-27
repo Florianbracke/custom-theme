@@ -130,6 +130,9 @@ ul.menu{
 	position: relative;
 	padding:8px 0;
 }
+.entry-content ul li > a{
+	color: inherit;	
+}
 
 /*--------------------------------------------------------------------------------------*\
 | COLUMNS
@@ -245,7 +248,7 @@ figure.wp-block-gallery > figure img{
 | BLOCK QUERY
 \*--------------------------------------------------------------------------------------*/   
 .wp-block-query ul{
-	list-style: none;
+		list-style: none;
 	padding: 0;
 	margin: 0;
 	width: 100%;
