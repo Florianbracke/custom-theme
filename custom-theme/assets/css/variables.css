@@ -19,17 +19,8 @@
     --section-padding-l: 128px;
     --section-padding-m: 64px;
     --section-padding-s: 32px;
-     --section-padding-xs: 16px;
+    --section-padding-xs: 16px;
     --section-padding-xxs: 8px;
-
-    --color-geel: #EBA700;
-    --color-bordeaux: #772235;
-
-    --color-zwart:#242424;
-    --color-licht-zwart: #414141;
-    --color-grijs: #707070;
-    --color-licht-grijs: #F8F8F8;
-    --color-wit: #ffffff;
 
 }      	
         
@@ -44,7 +35,7 @@ body{
     font-weight: 400;
     font-size: 18px;
     line-height: 30px;
-    color: var(--default-text-color);
+    color: var(--text-color);
     letter-spacing: 2px;
 }
 
@@ -55,7 +46,7 @@ h1 {
     font-size: 80px;
     line-height: 1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-text);
     margin-top: 0;
     margin-bottom: calc( 1.5 * var(--content-padding-m));
 }
@@ -67,7 +58,7 @@ h2 {
     font-size: 40px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-text);
     margin-top: 0;
     margin-bottom: var(--content-padding-m);
 }
@@ -78,7 +69,7 @@ h3, figcaption {
     font-size: 32px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-text);
     margin-top: 0;
     margin-bottom: var(--content-padding-m);
 }
@@ -89,7 +80,7 @@ h4 {
     font-size: 24px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-color);
     margin-top: 0;
     margin-bottom: var(--content-padding-m);
 }
@@ -100,7 +91,7 @@ h5 {
     font-size: 20px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-color);
     margin-top: 0;
     margin-bottom: var(--content-padding-m);
 }
@@ -111,7 +102,7 @@ h6 {
     font-size: 18px;
     line-height: 1.1;
     letter-spacing: 2px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-color);
     margin-top: 0;
     margin-bottom: var(--content-padding-m);
 }
@@ -121,17 +112,17 @@ p {
     font-size: 18px;
     line-height: 1.45;
     letter-spacing: 0px;
-    color: var(--default-heading-text-color);
+    color: var(--heading-color);
     margin-top: 0;
     margin-bottom: 12px;
 }
 p > a{
-    color: var(--default-filled-button-text-color);
+    color: var(--filled-button-text);
 }
 a {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    color: var(--default-filled-button-text-color);
+    color: var(--filled-button-text);
     margin-top: 0;
     line-height: 1.1;
     font-size: 16px;
@@ -139,7 +130,7 @@ a {
 a.wp-block-button__link{
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    color: var(--default-filled-button-text-color);
+    color: var(--filled-button-text);
     margin-top: 0;
     font-weight: 400;
     line-height: 1.1;
@@ -151,7 +142,7 @@ li {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0px;
-    color: var(--default-text-color);
+    color: var(--text-color);
 }
 
 
@@ -161,43 +152,43 @@ li {
 | Background Color
 \*--------------------------------------------------------------------------------------*/
 .has-default-text-color-background-color{
-    background-color: var(--default-text-color)
+    background-color: var(--text-color)
 }
 .has-accent-text-color-one-background-color{
-    background-color: var(--accent-text-color-one)
+    background-color: var(--text-one)
 }
 .has-accent-text-color-two-background-color{
-    background-color: var(--accent-text-color-two)
+    background-color: var(--text-two)
 }
 .has-accent-text-color-three-background-color{
-    background-color: var(--accent-text-color-three)
+    background-color: var(--text-three)
 }
 .has-default-heading-text-color-background-color{
-    background-color: var(--default-heading-text-color)
+    background-color: var(--heading-color)
 }
 .has-default-background-color-background-color{
-    background-color: var(--default-background-color)
+    background-color: var(--background-color)
 }
 .has-accent-background-color-one-background-color{
-    background-color: var(--accent-background-color-one)
+    background-color: var(--background-one)
 }
 .has-accent-background-color-two-background-color{
-    background-color: var(--accent-background-color-two)
+    background-color: var(--background-two)
 }
 .has-accent-background-color-three-background-color{
-    background-color: var(--accent-background-color-three)
+    background-color: var(--background-three)
 }
 .has-default-filled-button-text-color-background-color{
-    background-color: var(--default-filled-button-text-color)
+    background-color: var(--filled-button-text)
 }
 .has-default-filled-button-background-color-background-color{
-    background-color: var(--default-filled-button-background-color)
+    background-color: var(--filled-button-background)
 }
 .has-default-outlined-button-text-color-background-color{
-    background-color: var(--default-outlined-button-text-color)
+    background-color: var(--outlined-button-text)
 }
 .has-default-outlined-button-background-color-background-color{
-    background-color: var(--default-outlined-button-background-color)
+    background-color: var(--outlined-button-background)
 }
 
 
@@ -210,136 +201,46 @@ li {
 | Text Color
 \*--------------------------------------------------------------------------------------*/
 .has-default-text-color-color{
-    color: var(--default-text-color)
+    color: var(--text-color)
 }
 .has-accent-text-color-one-color{
-    color: var(--accent-text-color-one)
+    color: var(--text-one)
 }
 .has-accent-text-color-two-color{
-    color: var(--accent-text-color-two)
+    color: var(--text-two)
 }
 .has-accent-text-color-three-color{
-    color: var(--accent-text-color-three)
+    color: var(--text-three)
 }
 .has-default-heading-text-color-color{
-    color: var(--default-heading-text-color)
+    color: var(--heading-text)
 }
 .has-default-background-color-color{
-    color: var(--default-background-color)
+    color: var(--background-color)
 }
 
 .has-accent-background-color-one-color{
-    color: var(--accent-background-color-one)
+    color: var(--background-color-one)
 }
 .has-accent-background-color-two-color{
-    color: var(--accent-background-color-two)
+    color: var(--background-color-two)
 }
 .has-accent-background-color-three-color{
-    color: var(--accent-background-color-three)
+    color: var(--background-color-three)
 }
 .has-default-filled-button-text-color-color{
-    color: var(--default-filled-button-text-color)
+    color: var(--filled-button-text)
 }
 .has-default-filled-button-background-color-color{
-    color: var(--default-filled-button-background-color)
+    color: var(--filled-button-background)
 }
 .has-default-outlined-button-text-color-color{
-    color: var(--default-outlined-button-text-color)
+    color: var(--outlined-button-text)
 }
 .has-default-outlined-button-background-color-color{
-    color: var(--default-outlined-button-background-color)
+    color: var(--outlined-button-background)
 }
 
-
-/* var(--default-text-color)
-var(--accent-text-color-one)
-var(--accent-text-color-two)
-var(--accent-text-color-three)
-
-var(--default-heading-text-color)
-var(--default-background-color)
-
-var(--accent-background-color-one)
-var(--accent-background-color-two)
-var(--accent-background-color-three)
-
-var(--default-filled-button-text-color)
-var(--default-filled-button-background-color)
-
-var(--default-outlined-button-text-color)
-var(--default-outlined-button-background-color) */
-
-.has-zwart-color a{
-color: var(--color-zwart);
-}
-.has-licht-black-color a{
-color: var(--color-licht-zwart);
-}
-.has-grijs-color a{
-color: var(--color-grijs);
-}
-.has-licht-grijs-color a{
-color: var(--color-licht-grijs);
-}
-.has-wit-color a{
-color: var(--color-wit);
-}
-
-.has-bordeaux-color a{
-color: var(--color-bordeaux);
-}
-.has-geel-color a{
-color: var(--color-geel);
-}
-
-
-.has-zwart-color strong{
-color: var(--color-zwart);
-}
-.has-licht-black-color strong{
-color: var(--color-licht-zwart);
-}
-.has-grijs-color strong{
-color: var(--color-grijs);
-}
-.has-licht-grijs-color strong{
-color: var(--color-licht-grijs);
-}
-.has-wit-color strong{
-color: var(--color-wit);
-}
-
-.has-bordeaux-color strong{
-color: var(--color-bordeaux);
-}
-.has-geel-color strong{
-color: var(--color-geel);
-}
-
-
-
-ul.has-zwart-color li{
-color: var(--color-zwart);
-}
-ul.has-licht-black-color li{
-color: var(--color-licht-zwart);
-}
-ul.has-grijs-color li{
-color: var(--color-grijs);
-}
-ul.has-licht-grijs-color li{
-color: var(--color-licht-grijs);
-}
-ul.has-wit-color li{
-color: var(--color-wit);
-}
-
-ul.has-bordeaux-color li{
-color: var(--color-bordeaux);
-}
-ul.has-geel-color li{
-color: var(--color-geel);
-}
 
 
 /*--------------------------------------------------------------------------------------*\
