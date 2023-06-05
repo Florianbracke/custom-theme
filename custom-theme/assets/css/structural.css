@@ -301,20 +301,13 @@ li.wp-block-post.wide{
     flex-wrap: wrap;
 	margin-top: var(--content-padding-l);
 }
-.wp-block-buttons:last-child{
-	gap: var(--content-padding-m);
-}
-.wp-block-buttons:last-child .wp-block-button{
-	margin-bottom: 0;
-	margin-right: 0;
-}
 .wp-block-button{
 	display: flex;
 	align-items: center;
 	margin-right: var(--content-padding-m);
 	margin-bottom: var(--content-padding-m);
 }
-.wp-block-button .wp-block-button__link, .gform_button.button, header .contact-menu a {
+.wp-block-button a{
 	background-color: var(--filled-button-background);
 	color: var(--filled-button-text);
 	border: unset;
@@ -322,33 +315,25 @@ li.wp-block-post.wide{
 	cursor: pointer;
 	padding: 12px 24px;
 	letter-spacing: 1.5px;
-	border: 1px solid var(--filled-button-background);
+	border: 2px solid var(--filled-button-background);
 	border-radius: var(--border-radius);
 	transition: 0.3s;
-}
-body header .contact-menu a{
-	background-color: unset;
-	color: var(--filled-button-background);
 }
 .wp-block-button{
 	cursor: pointer;
 }
-.wp-block-button:nth-child(2) .wp-block-button__link{
-	background-color: unset;
-	border: 1px solid var(--filled-button-background);
-	color: var(--filled-button-background);
+.wp-block-button.is-style-outline a{
+	background: unset;
+	border: 2px solid var(--outlined-button-text);
+	color: var(--outlined-button-text);
 }
-/* HOVER */
-.wp-block-button .wp-block-button__link:hover, .gform_button.button:hover{
-	background-color: unset;
-	color: var(--filled-button-background);
+.wp-block-button.is-style-Underline a{
+	background: unset;
+	border: 2px solid transparent;
+	color: var(--outlined-button-text);
+	text-decoration: underline;
 }
-.wp-block-button:nth-child(2) .wp-block-button__link:hover, header .contact-menu a:hover{
-	background-color: var(--filled-button-background);
-	color: var(--filled-button-text);
-	text-decoration: unset;
-	border: 1px solid var(--filled-button-background);
-}
+
 
 
 
