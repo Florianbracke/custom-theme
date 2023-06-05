@@ -315,39 +315,39 @@ li.wp-block-post.wide{
 	margin-bottom: var(--content-padding-m);
 }
 .wp-block-button .wp-block-button__link, .gform_button.button, header .contact-menu a {
-	background-color: var(--default-filled-button-background-color);
-	color: var(--default-filled-button-text-color);
+	background-color: var(--filled-button-background);
+	color: var(--filled-button-text);
 	border: unset;
 	transition: 0.23s;
 	cursor: pointer;
 	padding: 12px 24px;
 	letter-spacing: 1.5px;
-	border: 1px solid var(--default-filled-button-background-color);
+	border: 1px solid var(--filled-button-background);
 	border-radius: var(--border-radius);
 	transition: 0.3s;
 }
 body header .contact-menu a{
 	background-color: unset;
-	color: var(--default-filled-button-background-color);
+	color: var(--filled-button-background);
 }
 .wp-block-button{
 	cursor: pointer;
 }
 .wp-block-button:nth-child(2) .wp-block-button__link{
 	background-color: unset;
-	border: 1px solid var(--default-filled-button-background-color);
-	color: var(--default-filled-button-background-color);
+	border: 1px solid var(--filled-button-background);
+	color: var(--filled-button-background);
 }
 /* HOVER */
 .wp-block-button .wp-block-button__link:hover, .gform_button.button:hover{
 	background-color: unset;
-	color: var(--default-filled-button-background-color);
+	color: var(--filled-button-background);
 }
 .wp-block-button:nth-child(2) .wp-block-button__link:hover, header .contact-menu a:hover{
-	background-color: var(--default-filled-button-background-color);;
-	color: var(--default-filled-button-text-color);
+	background-color: var(--filled-button-background);
+	color: var(--filled-button-text);
 	text-decoration: unset;
-	border: 1px solid var(--default-filled-button-background-color);
+	border: 1px solid var(--filled-button-background);
 }
 
 
