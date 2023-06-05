@@ -37,12 +37,12 @@ function my_acf_init_block_types() {
 
     if( function_exists('acf_register_block_type') ) {
 
-        $directory = get_stylesheet_directory() . "/template-parts/blocks/";
-        $filecount = count(glob($directory . "*"));
+   //     $directory = get_stylesheet_directory() . "/template-parts/blocks/";
+   //     $filecount = count(glob($directory . "*"));
     
-       for ($x = 1; $x <= $filecount; $x++) {
+  //     for ($x = 1; $x <= $filecount; $x++) {
         
-            require get_stylesheet_directory() . "/template-parts/blocks/blok-$x.php";
+  //          require get_stylesheet_directory() . "/template-parts/blocks/blok-$x.php";
 
             acf_register_block_type(array(
                 'name'              => "$naam",
@@ -54,7 +54,7 @@ function my_acf_init_block_types() {
                 'keywords'          => array( "$naam" ),
             ));
             
-        }
+     //   }
     }
 }
 add_action('acf/init', 'my_acf_init_block_types');
