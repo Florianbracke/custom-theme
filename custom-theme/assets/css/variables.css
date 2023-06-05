@@ -264,88 +264,87 @@ li {
 	}
 }
 @media screen and (max-width: 1350px){
-body{
-    font-size: 16px;
-}
-h1 {
-    font-size: 48px;
+	body{
+	font-size: 16px;
+	}
+	h1 {
+	font-size: 48px;
 	margin-bottom: var(--content-padding-l);
-}
-h2 {
-    font-size: 32px;
+	}
+	h2 {
+	font-size: 32px;
 	margin-bottom: var(--content-padding-l);
-}
-h3, figcaption {
-    font-size: 28px;
+	}
+	h3, figcaption {
+	font-size: 28px;
 	margin-bottom: var(--content-padding-l);
-}
-h4 {
-    font-size: 26px;
+	}
+	h4 {
+	font-size: 26px;
 	margin-bottom: var(--content-padding-l);
-}
-h5 {
-    font-size: 24px;
-}
-h6 {
-    font-size: 22px;
-}
-p {
-    font-size: 16px;
-}
-a {
-    font-size: 14px;
-}
-a.wp-block-button__link{
-    font-size: 14px;
-}
-li {
-    font-size: 14px;
-}
-:root{
-    --content-gap: 48px;
-}
-}
+	}
+	h5 {
+	font-size: 24px;
+	}
+	h6 {
+	font-size: 22px;
+	}
+	p {
+	font-size: 16px;
+	}
+	a {
+	font-size: 14px;
+	}
+	a.wp-block-button__link{
+	font-size: 14px;
+	}
+	li {
+	font-size: 14px;
+	}
+	:root{
+	--content-gap: 48px;
+	}
+	}
 @media screen and (max-width: 900px){
 
 }
 @media screen and (max-width: 768px){
-:root{
-    --content-gap: 32px;
-}
-body{
-    font-size: 16px;
-}
-h1 {
-    font-size: 38px;
-}
-h2 {
-    font-size: 26px;
-}
-h3, figcaption {
-    font-size: 24px;
-}
-h4 {
-    font-size: 22px;
-}
-h5 {
-    font-size: 20px;
-}
-h6 {
-    font-size: 18px;
-}
-p {
-    font-size: 14px;
-}
-a {
-    font-size: 12px;
-}
-a.wp-block-button__link{
-    font-size: 12px;
-}
-li {
-    font-size: 12px;
-}
-
+	:root{
+	--content-gap: 32px;
+	}
+	body{
+	font-size: 16px;
+	}
+	h1 {
+	font-size: 38px;
+	}
+	h2 {
+	font-size: 26px;
+	}
+	h3, figcaption {
+	font-size: 24px;
+	}
+	h4 {
+	font-size: 22px;
+	}
+	h5 {
+	font-size: 20px;
+	}
+	h6 {
+	font-size: 18px;
+	}
+	p {
+	font-size: 14px;
+	}
+	a {
+	font-size: 12px;
+	}
+	a.wp-block-button__link{
+	font-size: 12px;
+	}
+	li {
+	font-size: 12px;
+	}
 }
 @media screen and (max-width: 550px){
 	h1 {
