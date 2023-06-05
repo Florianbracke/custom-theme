@@ -304,7 +304,7 @@ function ACF_optionspage() {
                 'name' => 'gegevens',
                 'type' => 'group',
                 'instructions' => 'Insert company info',
-                'required' => 1,
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -319,7 +319,7 @@ function ACF_optionspage() {
                         'name' => 'email',
                         'type' => 'email',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -337,7 +337,7 @@ function ACF_optionspage() {
                         'name' => 'telefoon_nummer',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -356,7 +356,7 @@ function ACF_optionspage() {
                         'name' => 'straat_nummer',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -375,7 +375,7 @@ function ACF_optionspage() {
                         'name' => 'gemeente_postcode',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -394,7 +394,7 @@ function ACF_optionspage() {
                         'name' => 'naam_bedrijf',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -413,7 +413,7 @@ function ACF_optionspage() {
                         'name' => 'maatschappelijke_zetel',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -432,7 +432,7 @@ function ACF_optionspage() {
                         'name' => 'ondernemingsnummer',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
