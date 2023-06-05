@@ -29,6 +29,12 @@ header.site-header, footer, .entry-content > *.alignwide, .entry-header{
 .entry-content > div.wp-block-columns *.has-background{
 	padding: var(--content-padding-xl);
 }
+.entry-content .wp-block-columns > .wp-block-column > .wp-block-columns:first-child{
+	padding-bottom: var(--content-padding-xl);
+}
+.entry-content .wp-block-columns > .wp-block-column > * ~ .wp-block-columns{
+	padding-top: var(--content-padding-xl);
+}
 
 
 /*--------------------------------------------------------------------------------------*\
@@ -371,6 +377,12 @@ li.wp-block-post.wide{
 		padding-top: var(--section-padding-m);
 		padding-bottom: var(--section-padding-m);
 	}
+	.entry-content .wp-block-columns > .wp-block-column > .wp-block-columns:first-child{
+		padding-bottom: var(--section-padding-m);
+	}
+	.entry-content .wp-block-columns > .wp-block-column > * ~ .wp-block-columns{
+		padding-top:  var(--section-padding-m);
+	}
 	.entry-content > *{
 		padding-top: calc( 0.75 * var(--section-padding-l));
 		padding-bottom: calc( 0.75 * var(--section-padding-l));
@@ -410,6 +422,7 @@ li.wp-block-post.wide{
 		max-width: 100%;
 		margin: auto;
 	}
+
 	.wp-block-button .wp-block-button__link, footer p:not(.cred) > a, .gform_button.button {
 		padding: 12px;
 	}
@@ -446,6 +459,12 @@ li.wp-block-post.wide{
 		padding-bottom: calc( 0.5 * var(--section-padding-m));
 		max-width: 100%;
 		margin: auto;
+	}
+	.entry-content .wp-block-columns > .wp-block-column > .wp-block-columns:first-child{
+		padding-bottom: var(--section-padding-xs);
+	}
+	.entry-content .wp-block-columns > .wp-block-column > * ~ .wp-block-columns{
+		padding-top:  var(--section-padding-xs);
 	}
 	.entry-content > .wp-block-columns.has-background{
 		padding: calc( 0.5 * var(--section-padding-m));
