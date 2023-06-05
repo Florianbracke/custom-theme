@@ -155,14 +155,14 @@ function theme_colours(){
 		:root{
 			<?php 
 				echo "--text-color:" . $default_text_color . ";"; 
-				echo "--text-accent-one:" . $accent_text_color_one . ";";
-				echo "--text-accent-two:" . $accent_text_color_two . ";";
-				echo "--text-accent-three:" . $accent_text_color_three . ";";
+				echo "--text-one:" . $accent_text_color_one . ";";
+				echo "--text-two:" . $accent_text_color_two . ";";
+				echo "--text-three:" . $accent_text_color_three . ";";
 				echo "--heading-color:" . $default_heading_text_color . ";"; 
 				echo "--background-color:" . $default_background_color . ";";
-				echo "--accent-background-one:" . $accent_background_color_one . ";";
-				echo "--accent-background-two:" . $accent_background_color_two . ";";
-				echo "--accent-background-three:" . $accent_background_color_three . ";";
+				echo "--background-one:" . $accent_background_color_one . ";";
+				echo "--background-two:" . $accent_background_color_two . ";";
+				echo "--background-three:" . $accent_background_color_three . ";";
 				echo "--filled-button-text:" . $default_filled_button_text_color . ";";
 				echo "--filled-button-background:" . $default_filled_button_background_color . ";";
 				echo "--outlined-button-text:" . $default_outlined_button_text_color . ";";
