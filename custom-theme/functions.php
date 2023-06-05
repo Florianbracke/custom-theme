@@ -154,19 +154,19 @@ function theme_colours(){
 	    <style>
 		:root{
 			<?php 
-				echo "--default-text-color:" . $default_text_color . ";"; 
-				echo "--accent-text-color-one:" . $accent_text_color_one . ";";
-				echo "--accent-text-color-two:" . $accent_text_color_two . ";";
-				echo "--accent-text-color-three:" . $accent_text_color_three . ";";
-				echo "--default-heading-text-color:" . $default_heading_text_color . ";"; 
-				echo "--default-background-color:" . $default_background_color . ";";
-				echo "--accent-background-color-one:" . $accent_background_color_one . ";";
-				echo "--accent-background-color-two:" . $accent_background_color_two . ";";
-				echo "--accent-background-color-three:" . $accent_background_color_three . ";";
-				echo "--default-filled-button-text-color:" . $default_filled_button_text_color . ";";
-				echo "--default-filled-button-background-color:" . $default_filled_button_background_color . ";";
-				echo "--default-outlined-button-text-color:" . $default_outlined_button_text_color . ";";
-				echo "--default-outlined-button-background-color:" . $default_outlined_button_background_color . ";";
+				echo "--text-color:" . $default_text_color . ";"; 
+				echo "--text-accent-one:" . $accent_text_color_one . ";";
+				echo "--text-accent-two:" . $accent_text_color_two . ";";
+				echo "--text-accent-three:" . $accent_text_color_three . ";";
+				echo "--heading-color:" . $default_heading_text_color . ";"; 
+				echo "--background-color:" . $default_background_color . ";";
+				echo "--accent-background-one:" . $accent_background_color_one . ";";
+				echo "--accent-background-two:" . $accent_background_color_two . ";";
+				echo "--accent-background-three:" . $accent_background_color_three . ";";
+				echo "--filled-button-txt:" . $default_filled_button_text_color . ";";
+				echo "--filled-button-background:" . $default_filled_button_background_color . ";";
+				echo "--outlined-button-txt:" . $default_outlined_button_text_color . ";";
+				echo "--outlined-button-background:" . $default_outlined_button_background_color . ";";
 		    ?>
 		}
 	    </style> <?php 
