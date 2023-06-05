@@ -163,9 +163,9 @@ function theme_colours(){
 				echo "--accent-background-one:" . $accent_background_color_one . ";";
 				echo "--accent-background-two:" . $accent_background_color_two . ";";
 				echo "--accent-background-three:" . $accent_background_color_three . ";";
-				echo "--filled-button-txt:" . $default_filled_button_text_color . ";";
+				echo "--filled-button-text:" . $default_filled_button_text_color . ";";
 				echo "--filled-button-background:" . $default_filled_button_background_color . ";";
-				echo "--outlined-button-txt:" . $default_outlined_button_text_color . ";";
+				echo "--outlined-button-text:" . $default_outlined_button_text_color . ";";
 				echo "--outlined-button-background:" . $default_outlined_button_background_color . ";";
 		    ?>
 		}
