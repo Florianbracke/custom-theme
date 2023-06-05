@@ -266,7 +266,7 @@ function CSS_duplicate() {
 	file_put_contents($destination,implode('', $arrayCSS));
 }
 
-add_action('init', 'CSS_duplicate');
+//add_action('init', 'CSS_duplicate');
 
 
 
