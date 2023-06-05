@@ -2,22 +2,19 @@
 | ALIGNMENT
 \*--------------------------------------------------------------------------------------*/   
 header.site-header, footer, .entry-content > *.alignwide, .entry-header{
-	padding-left: calc( 2* var(--section-padding-l));
-	padding-right: calc( 2* var(--section-padding-l));
+	padding-left: calc( 1.25 * var(--section-padding-l));
+	padding-right: calc(1.25 * var(--section-padding-l));
 }
 
 /*--------------------------------------------------------------------------------------*\
 | ENTRY-CONTENT
 \*--------------------------------------------------------------------------------------*/   
-.entry-content > *:first-child{
-	padding-top: 0;
-}
 .entry-content *:has(.aligncenter){
 	margin: auto;
 }
 .entry-content > * {
-    padding-top: calc( 0.5 * var(--section-padding-l));
-    padding-bottom: calc( 0.5 * var(--section-padding-l));
+    padding-top: calc( 1 * var(--section-padding-l));
+    padding-bottom: calc( 1 * var(--section-padding-l));
     max-width: 100%;
     margin: auto;
 }
@@ -25,18 +22,21 @@ header.site-header, footer, .entry-content > *.alignwide, .entry-header{
 	padding-left: 0;
 	padding-right: 0;
 }
-.entry-content > *:not(.alignwide, .alignfull){
-	padding-left: calc( 2* var(--section-padding-xl));
-	padding-right: calc( 2* var(--section-padding-xl));
+.entry-content > *:not(.alignfull){
+	padding-left: calc( 1.25 * var(--section-padding-l));
+	padding-right: calc( 1.25 * var(--section-padding-l));
 }
 .entry-content > div.wp-block-columns *.has-background{
 	padding: var(--content-padding-xl);
-	border-radius: 8px;
 }
+
 
 /*--------------------------------------------------------------------------------------*\
 | IMAGE
-\*--------------------------------------------------------------------------------------*/   
+\*--------------------------------------------------------------------------------------*/  
+.wp-block-image.is-style-rounded img{
+	border-radius: 50%;
+} 
 picture{
 	display: flex;
 }
@@ -74,10 +74,20 @@ body .is-style-contain img{
 	display: grid;
 }
 .wp-block-image img{
-	width: 100%;
     object-fit: cover;
-}
+	border-radius: 20px 20px 0px 0px;
+} 
 
+h1 > img,
+h2 > img,
+h3 > img,
+h4 > img,
+h5 > img,
+h6 > img,
+a > img,
+p > img{
+	height: 100%;
+}
 
 /*--------------------------------------------------------------------------------------*\
 | VARIA
@@ -89,8 +99,9 @@ p:first-child, h1:first-child, h2:first-child, h3:first-child, h4:first-child, h
 	padding-top: 0;
 }
 .custom-logo{
-	width: 160px;
-    height: 62px;
+	width: auto;
+    height: auto;
+    aspect-ratio: 1 / 2;
 }
 .entry-title{
 	margin-bottom: var(--content-padding-xl);
@@ -212,24 +223,29 @@ body .wp-block-cover img{
 .has-text-align-right{
 	text-align: end;
 }
-
+figure.aligncenter{
+	display: flex;
+    justify-content: center;
+}
 
 /*--------------------------------------------------------------------------------------*\
 | GALLERY
 \*--------------------------------------------------------------------------------------*/   
-.wp-block-gallery{
+.entry-content figure.wp-block-gallery{
     display: flex;
     flex-wrap: wrap;
-	gap: var(--content-padding-l);
+	gap: var(--content-padding-m);
 }
-figure.wp-block-gallery{
-	transition: 0.3s ease-in-out; 
-    column-count: 3;
-    column-gap: var(--content-gap-s);
-    display: block;
+figure.wp-block-gallery > .wp-block-image{
+    aspect-ratio: 1 / 1;
+    width: calc(25% - 3 * var(--content-padding-m) / 4);
+	display: flex;
 }
 figure.wp-block-gallery img{
 	cursor: pointer;
+	border-radius: unset;
+	height: 100%;
+    width: 100%;
 }
 figure.wp-block-gallery > figure{
 	display: block;
@@ -239,16 +255,14 @@ figure.wp-block-gallery > figure{
 figure.wp-block-gallery picture{
 	margin-bottom: 10px;
 }
-figure.wp-block-gallery > figure img{
-	height: 100%;
-}
+
 
 
 /*--------------------------------------------------------------------------------------*\
 | BLOCK QUERY
 \*--------------------------------------------------------------------------------------*/   
 .wp-block-query ul{
-		list-style: none;
+	list-style: none;
 	padding: 0;
 	margin: 0;
 	width: 100%;
@@ -285,6 +299,7 @@ li.wp-block-post.wide{
 .wp-block-buttons{
 	display: flex;
     flex-wrap: wrap;
+	margin-top: var(--content-padding-l);
 }
 .wp-block-buttons:last-child{
 	gap: var(--content-padding-m);
@@ -349,8 +364,13 @@ body header .contact-menu a{
 		max-height: 800px;
 		height: 800px;
 	}
+
 }
 @media screen and (max-width: 1800px){
+	.entry-content > .wp-block-columns.has-background {
+		padding-top: var(--section-padding-m);
+		padding-bottom: var(--section-padding-m);
+	}
 	.entry-content > *{
 		padding-top: calc( 0.75 * var(--section-padding-l));
 		padding-bottom: calc( 0.75 * var(--section-padding-l));
@@ -358,15 +378,15 @@ body header .contact-menu a{
 		margin: auto;
 	}
 	header.site-header, footer, .entry-content > *.alignwide, .entry-header{
-		padding-left: calc( 0.75 * var(--section-padding-l));
-		padding-right: calc( 0.75 * var(--section-padding-l));
+		padding-left: calc( 1 * var(--section-padding-l));
+		padding-right: calc( 1 * var(--section-padding-l));
 	}
-	.entry-content > *:not(.alignwide, .alignfull){
-		padding-left: calc( 1.5 * var(--section-padding-l));
-		padding-right: calc( 1.5 * var(--section-padding-l));
+	.entry-content > *:not(.alignfull){
+		padding-left: calc( 1 * var(--section-padding-l));
+		padding-right: calc( 1 * var(--section-padding-l));
 	}
 	.entry-content > div.wp-block-columns *.has-background{
-		padding: var(--content-padding-l);
+		padding: calc( 0.75 * var(--section-padding-l));;
 	}
 }
 @media screen and (max-width: 1350px){
@@ -380,9 +400,9 @@ body header .contact-menu a{
 		padding-left: calc( 0.5 * var(--section-padding-l));
 		padding-right: calc( 0.5 * var(--section-padding-l));
 	}
-	.entry-content > *:not(.alignwide, .alignfull){
-		padding-left:calc( 2 * var(--section-padding-l));
-		padding-right: calc( 2 * var(--section-padding-l));
+	.entry-content > *:not( .alignfull){
+		padding-left:calc( 0.5 * var(--section-padding-l));
+		padding-right: calc( 0.5  * var(--section-padding-l));
 	}
 	.entry-content > *{
 		padding-top: var(--section-padding-m);
@@ -390,8 +410,8 @@ body header .contact-menu a{
 		max-width: 100%;
 		margin: auto;
 	}
-	.wp-block-button .wp-block-button__link, footer p > a, .gform_button.button {
-		padding: 12px var(--content-padding-s);
+	.wp-block-button .wp-block-button__link, footer p:not(.cred) > a, .gform_button.button {
+		padding: 12px;
 	}
 	.wp-block-cover .wp-block-cover__inner-container{
 		padding: 25px;
@@ -406,9 +426,11 @@ body header .contact-menu a{
 		max-height: 600px;
 		height: 600px;
 	}
+	.entry-content > div.wp-block-columns *.has-background{
+		padding: calc( 0.5  * var(--section-padding-l));
+	}
 	.entry-content > .wp-block-columns.has-background{
-		padding-top: var(--section-padding-m);
-    	padding-bottom: var(--section-padding-m);
+		padding: calc( 0.5  * var(--section-padding-l));
 	}
 	.wp-block-columns > div > .wp-block-columns{
 		flex-wrap: nowrap;	
@@ -422,7 +444,7 @@ body header .contact-menu a{
 		padding-left: calc( 0.5 * var(--section-padding-m));
 		padding-right: calc( 0.5 * var(--section-padding-m));
 	}
-	.entry-content > *:not(.alignwide, .alignfull){
+	.entry-content > *:not( .alignfull){
 		padding-left: calc( 0.5 * var(--section-padding-m));
 		padding-right: calc( 0.5 * var(--section-padding-m));
 	}	
@@ -431,6 +453,12 @@ body header .contact-menu a{
 		padding-bottom: calc( 0.5 * var(--section-padding-m));
 		max-width: 100%;
 		margin: auto;
+	}
+	.entry-content > .wp-block-columns.has-background{
+		padding: calc( 0.5 * var(--section-padding-m));
+	}
+	.entry-content > div.wp-block-columns *.has-background{
+		padding: calc( 0.5  * var(--section-padding-m));
 	}
 	body .wp-block-quote p, body .wp-block-quote cite{
 		max-width: 66%;
@@ -447,13 +475,15 @@ body header .contact-menu a{
 		max-height: 400px;
 		height: 400px;
 	}
-	.entry-content > .wp-block-columns.has-background {
-		margin: var(--section-padding-s) 0;
-	}
+
 }
 @media screen and (max-width: 768px){
 	.wp-block-columns > div > .wp-block-columns{
 		flex-direction: column;	
+	}
+	.usp .wp-block-image img{
+		width: 50px;
+		object-fit: contain;
 	}
 	.wp-block-cover .wp-block-cover__inner-container{
 		padding: 15px;
@@ -478,12 +508,7 @@ body header .contact-menu a{
 		max-height: 300px;
 		height: 300px;
 	}
-	.entry-content > div.wp-block-columns *.has-background{
-		padding:  48px;
-	}
-	.entry-content > .wp-block-columns.has-background {
-		padding: 48px;
-	}
+
 }
 @media screen and (max-width: 550px){	
 
@@ -491,17 +516,15 @@ body header .contact-menu a{
 		padding-left: calc( 0.5 * var(--section-padding-s));
 		padding-right: calc( 0.5 * var(--section-padding-s));
 	}
-	.entry-content > *:not(.alignwide, .alignfull){
+	.entry-content > *:not( .alignfull){
 		padding-left: calc( 0.5 * var(--section-padding-s));
 		padding-right: calc( 0.5 * var(--section-padding-s));
 	}
 	.entry-content > div.wp-block-columns *.has-background{
-		padding: var(--section-padding-s);
+		padding: calc( 0.5 * var(--section-padding-s));
 	}
 	.entry-content > .wp-block-columns.has-background{
-		margin: var(--section-padding-xs) 0;
-		padding-top: var(--section-padding-s);
-    	padding-bottom: var(--section-padding-s);
+		padding: var(--section-padding-s) calc(  0.5 * var(--section-padding-s));
 	}
 
 }
