@@ -243,6 +243,49 @@ li {
 
 
 
+.has-default-text-color-color *{
+    color: var(--text-color)
+}
+.has-accent-text-color-one-color *{
+    color: var(--text-one)
+}
+.has-accent-text-color-two-color *{
+    color: var(--text-two)
+}
+.has-accent-text-color-three-color *{
+    color: var(--text-three)
+}
+.has-default-heading-text-color-color *{
+    color: var(--heading-text)
+}
+.has-default-background-color-color *{
+    color: var(--background-color)
+}
+
+.has-accent-background-color-one-color *{
+    color: var(--background-color-one)
+}
+.has-accent-background-color-two-color *{
+    color: var(--background-color-two)
+}
+.has-accent-background-color-three-color *{
+    color: var(--background-color-three)
+}
+.has-default-filled-button-text-color-color *{
+    color: var(--filled-button-text)
+}
+.has-default-filled-button-background-color-color *{
+    color: var(--filled-button-background)
+}
+.has-default-outlined-button-text-color-color *{
+    color: var(--outlined-button-text)
+}
+.has-default-outlined-button-background-color-color *{
+    color: var(--outlined-button-background)
+}
+
+
+
 /*--------------------------------------------------------------------------------------*\
 | MEDIA QUERIES
 \*--------------------------------------------------------------------------------------*/
