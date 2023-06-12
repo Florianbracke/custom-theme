@@ -247,6 +247,7 @@ function be_gutenberg_scripts() {
 		filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ),
 		true
 	);  
+	wp_enqueue_script('be-editorr', get_stylesheet_directory_uri() . '/assets/js/stylingScript.js' );
 }
 add_action( 'enqueue_block_editor_assets', 'be_gutenberg_scripts' );
 
