@@ -1,15 +1,10 @@
 
-	window.addEventListener('load', () =>{
+//TODO : show empty buttons in page editor
+
+window.addEventListener('load', () =>{
     let allButtons = document.querySelectorAll('body.logged-in a.wp-block-button__link');
-    let editorButtons = document.querySelectorAll('body.wp-admin .wp-block-button__link');
 
     allButtons.forEach(button => {
-      if(!button.href){
-        button.classList.add('emptyButton');
-      }
-    });
-
-    editorButtons.forEach(button => {
       if(!button.href){
         button.classList.add('emptyButton');
       }
