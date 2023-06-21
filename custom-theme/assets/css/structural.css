@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------------------*\
 | ALIGNMENT
 \*--------------------------------------------------------------------------------------*/   
-header.site-header, footer, .entry-content > *.alignwide, .entry-header{
+header.site-header, footer, .entry-content > *.alignwide, .entry-header, .wp-block-cover .wp-block-cover__inner-container{
 	padding-left: calc( 1.25 * var(--section-padding-l));
 	padding-right: calc(1.25 * var(--section-padding-l));
 }
