@@ -296,6 +296,7 @@ function get_reusable_block( $block_id ){
 	return $reuse_block_content;
 }	
 
+
 /*--------------------------------------------------------------------------------------*\
 | ADD AND REMOVE BLOCK PATTERN CATEGORIES
 \*--------------------------------------------------------------------------------------*/
@@ -305,11 +306,14 @@ function removeCorePatterns() {
 	unregister_block_pattern_category('gallery');
 	unregister_block_pattern_category('header');
 	unregister_block_pattern_category('text');
-	unregister_block_pattern_category('uncategorized');
-	register_block_pattern_category( 'Custom', array( 'label' => 'Custom' ));
+	unregister_block_pattern_category('featured'); 
+    	unregister_block_pattern_category('posts');
+	unregister_block_pattern_category('call-to-action');
+	unregister_block_pattern_category('banner');
+	unregister_block_pattern_category('footer');
+    	unregister_block_pattern_category('testimonials');
 }
-add_action('after_setup_theme', 'removeCorePatterns');
-
+add_action('init', 'removeCorePatterns');
 
 
 /*--------------------------------------------------------------------------------------*\
