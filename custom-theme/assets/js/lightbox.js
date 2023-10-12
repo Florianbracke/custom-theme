@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
         for (let i = 0; i < lightboxImgs.length; i++){
             lightboxImgs[i].addEventListener('click', function(e) {
     
-                let currentSlide = 0;
+                let currentSlide = i;
     
                 body.classList.toggle('lightbox-active');
     
