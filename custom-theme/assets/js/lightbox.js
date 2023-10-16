@@ -3,15 +3,16 @@ window.addEventListener('load', () => {
     /* LIGHTBOX */	
     if( document.querySelector('.wp-block-gallery')){
     
-        let lightboxImgs = document.querySelectorAll('.wp-block-gallery img');
+        let lightboxImgs = document.querySelectorAll('.wp-block-gallery figure img');
+		let caption = document.querySelectorAll('.wp-block-gallery figure figcaption');
+		
         let body = document.querySelector('body');
-    
-        for (let i = 0; i < lightboxImgs.length; i++){
+
+		
+		for (let i = 0; i < lightboxImgs.length; i++){
             lightboxImgs[i].addEventListener('click', function(e) {
     
-                let currentSlide = i;
-    
-                body.classList.toggle('lightbox-active');
+		let currentSlide = i;
     
                 // Create the lightbox element and add it to the page
                 let lightbox = document.createElement('div');
@@ -19,12 +20,23 @@ window.addEventListener('load', () => {
                 document.body.appendChild(lightbox);
     
                 // Create an image element and set its src to the full-size image
-                var img = document.createElement('img');
+                let img = document.createElement('img');
+		let cptn = document.createElement('p');
+		cptn.classList.add('lightbox-caption');
+			
+		if(caption[i].innerHTML != 0){
+			cptn.style.padding= '1em';
+		}
                 img.src = lightboxImgs[i].src;
-    
+		let inner = caption[i].innerHTML;
+		cptn.innerHTML = inner;
+				
                 // Add the image to the lightbox
                 lightbox.appendChild(img);
-    
+    		lightbox.appendChild(cptn);
+		cptn.style.width = img.width + 'px';    
+		cptn.style.bottom = ((lightbox.offsetHeight - img.height )/2 ) + 'px'; 
+				
                 // Create the arrows
                 let left = document.createElement('div');
                 left.classList.add('left', 'arrow');
@@ -34,22 +46,31 @@ window.addEventListener('load', () => {
                 body.appendChild(right);
     
                 function goToSlide(n) {
-                    lightboxImgs[currentSlide].classList.remove('active');
-                    currentSlide = (n + lightboxImgs.length) % lightboxImgs.length;
-                    lightboxImgs[currentSlide].classList.add('active');
-    
-                    img.remove();
-                    img = document.createElement('img');
-                    img.src =  lightboxImgs[currentSlide].src;
-                    lightbox.appendChild(img);
-                }
+			lightboxImgs[currentSlide].classList.remove('active');
+			currentSlide = (n + lightboxImgs.length) % lightboxImgs.length;
+			lightboxImgs[currentSlide].classList.add('active');
+			
+			img.remove();
+			img = document.createElement('img');
+			img.src =  lightboxImgs[currentSlide].src;
+			lightbox.appendChild(img);
+					
+			cptn.remove();
+			cptn = document.createElement('p');
+			cptn.classList.add('lightbox-caption');
+			cptn.innerHTML = caption[currentSlide].innerHTML;
+			cptn.style.width = img.width + 'px';
+			
+			cptn.style.bottom = ((lightbox.offsetHeight - img.height )/2 ) + 'px'; 
+			lightbox.appendChild(cptn);
+		}
     
                 // Event Listeners
                 left.addEventListener('click', () => {
-                    goToSlide(currentSlide + 1);
+                    goToSlide(currentSlide - 1);
                 })
                 right.addEventListener('click', () => {
-                    goToSlide(currentSlide - 1);
+                    goToSlide(currentSlide + 1);
                 })
                 document.onkeydown = (e) => {
                     if (e.keyCode == '37') {
@@ -74,14 +95,14 @@ window.addEventListener('load', () => {
                 var yDown = null;
     
                 function getTouches(evt) {
-                  return evt.touches ||             // browser API
-                         evt.originalEvent.touches; // jQuery
+                	return evt.touches ||             // browser API
+         		evt.originalEvent.touches; // jQuery
                 }                                                     
     
                 function handleTouchStart(evt) {
-                    const firstTouch = getTouches(evt)[0];                                      
-                    xDown = firstTouch.clientX;                                      
-                    yDown = firstTouch.clientY;                                      
+			const firstTouch = getTouches(evt)[0];                                      
+			xDown = firstTouch.clientX;                                      
+			yDown = firstTouch.clientY;                                      
                 };                                                
     
                 function handleTouchMove(evt) {
@@ -171,9 +192,20 @@ window.addEventListener('load', () => {
             justify-content: center;
         }
         .lightbox img{
-            max-width: 60%;
-            max-height: 60%;
+            max-width: 100%;
+            max-height: 100%;
         }
+		.lightbox-caption{
+			position: absolute;
+			background: #ffffff8f;
+			display: flex;
+			box-sizing: border-box;
+			text-align: center;
+			color: var(--wp--preset--color--secondary);
+			font-size: 0.75rem;
+			margin: 0;
+			background: #f7f7f7c4;
+		}
         @media screen and (max-width: 768px){
     
             .lightbox img{
